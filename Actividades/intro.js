@@ -54,8 +54,8 @@ alert("Hello World");
 const is_hungry = confirm("Tienes hambre");
 console.log(is_hungry);
 
-const name = prompt("Your name");
-console.log(name);
+const nombre = prompt("Your name");
+console.log("Hello" + nombre);
 
 // Functions
 

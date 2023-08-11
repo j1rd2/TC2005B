@@ -1,0 +1,27 @@
+body {
+    background-color: darkblue;
+    margin: 0 auto;
+    max-width: 50em;
+    font-family: "Helvetica", "Arial", sans-serif;
+    line-height: 1.5em;
+    padding-top: 4em,1em;
+    color:rgb(255, 225, 0);
+}
+
+h1 {
+    color:yellow;
+}
+
+.favoritecolor {
+    color:red;
+}
+
+#superitalic {
+    font-style: italic;
+    color:gold
+}
+
+#superitalic:hover {
+    color:tomato;
+}
+
