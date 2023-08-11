@@ -65,3 +65,86 @@ function vamonos() {
 
 vamonos();
 
+//Function with no name (anonymous function)
+
+() => {
+    console.log("This is an anonymous function");
+}
+
+// => Opertador
+
+// You can call a anonymous functions by two ways
+
+// In a function
+// JS let you save a anonymous function in a normal function
+
+const anonymous_function = () => {
+    console.log("This is a anonymous function");
+}
+
+anonymous_function();
+
+// To manipulate HTML with JS we use the id tag
+
+const Oppenheimerid = document.getElementById("Oppenheimer");
+
+console.log(Oppenheimerid);
+
+const show_rating = () => {
+    const rating = "10/10 Excelente";
+    Oppenheimerid.innerHTML = rating;
+    Oppenheimerid.onclick = show_name;
+}
+
+const show_name = () => {
+    const nombre = "Oppenheimer";
+    Oppenheimerid.innerHTML = nombre;
+    Oppenheimerid.onclick = show_rating;
+}
+
+Oppenheimerid.onclick = () =>  {
+    console.log("You click on Oppenheimer");
+    show_rating();
+    Oppenheimerid.onclick = show_name;
+}
+
+// Arrays
+
+const arreglo = ["Element"] // Array size 1 that contains "Element"
+
+arreglo.push("New elemeng"); // Method push to add a new element as a pile
+
+arreglo[10] = "Another one"; // Crate new slots but they are empty exept the 10
+
+// Arrays in JS are also dictionaries (associative arrays)
+
+arreglo["Eleven"] = "Other one";
+
+// Through arrays
+
+// Traditional
+
+for (let i = 0; i < arreglo.length; i++) {
+    console.log(arreglo[i]);
+}
+
+// Alternative way
+
+for (let position in arreglo) { // Show the value in position
+    console.log(position)
+}
+
+for (let value of arreglo) { // Show the value 
+    console.log(value)
+}
+
+// Objects (json Java Script Object Notation)
+
+const objeto = {
+    atribute_1: "value_1",
+    atribute_2: "value_2",
+    atribute_3: "value_3"
+}
+
+console.log(objeto);
+console.log(objeto.atribute_1);
