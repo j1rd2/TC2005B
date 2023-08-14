@@ -1,150 +1,211 @@
 // variables, constantes, consola (log, info, warn, error, assert)
 
-//Variable decalration with var
-var best_seller = "Barbie";
+//Declaramos variables con let
+let pelicula_del_momento =  "Barbie";
 
-//Variable decalration with let (moder)
-let best_movie = "Oppenheimer";
+//Imprimimos en la consola con console.log()
+console.log(pelicula_del_momento);
 
-//Print the best movie variable
-console.log(best_movie);
+//Declaramos constantes con const
+const precio = 55;
 
-//Declare variables with cons
-const price = 50;
-console.log(price);
+console.log(precio);
 
-// Console messages
+console.error("Este es un mensaje de error");
 
-console.error("This is an error message");
-console.warn("This is a warning");
-console.info("This is an info message");
-console.assert(price === 55); // assert continue the execution if the value is true
+console.warn("Esta es una advertencia");
 
-// = Assign a value
-// == Equals to
-// === strictly equals to
+console.info("Esto es información");
+
+//assert continúa la ejecución si el valor es verdadero
+console.assert(precio === 55);
+
 
 // Alcance de las variables
 
-
-if(price > 50) {
-    var answer = "Too expensive";
-    console.log(answer)
+if(precio > 50) {
+    var respuesta = "Muy caro";
 } else {
-    var answer = "It's okay"
-    console.log(answer);
+    var respuesta = "Buen precio";
 }
+//respuesta sigue existiendo porque var tiene alcance de función
+console.log(respuesta);
 
-// Var lives inside and outside the function/loop/etc...
-for (var i = 1; i <= 10; i++){
+for (let i = 1; i <= 10; i++) {
     console.log(i);
 }
-console.log(i)
 
-// let lives just inside the function/loop/etc...It makes it more safe to protect info
-for(let j = 1; j <= 5; j++) {
-    console.log(j);
-}
-// console.log(j); 
+//La siguiente línea tiene error porque i tiene alcance de ámbito
+//console.log(i);
+
 
 // alert, prompt, confirm
+/*
+alert("Hola mundo!")
 
-alert("Hello World");
-
-const is_hungry = confirm("Tienes hambre");
+const is_hungry = confirm("¿Tienes hambre?");
 console.log(is_hungry);
 
-const nombre = prompt("Your name");
-console.log("Hello" + nombre);
+const nombre = prompt("¿Cómo te llamas?");
+console.log("Hola " + nombre);
+*/
 
-// Functions
+// funciones tradicionales
 
 function vamonos() {
-    console.log("Vamonos");
+    console.log("¡Vámonos, ya se acabó la clase!");
 }
 
 vamonos();
 
-//Function with no name (anonymous function)
 
-() => {
-    console.log("This is an anonymous function");
+// funciones modernas
+const funcion_anonima = () => {
+    console.log("Esto es una función anónima");
 }
 
-// => Opertador
+funcion_anonima();
 
-// You can call a anonymous functions by two ways
+// html dinámico con eventos
+const oppenheimer = document.getElementById("Oppenheimer");
 
-// In a function
-// JS let you save a anonymous function in a normal function
+console.log(oppenheimer);
 
-const anonymous_function = () => {
-    console.log("This is a anonymous function");
+const despliega_rating = () => {
+    const rating = "10/10 ¡Excelente!";
+    oppenheimer.innerHTML = rating;
+    oppenheimer.onclick = despliega_nombre;
 }
 
-anonymous_function();
-
-// To manipulate HTML with JS we use the id tag
-
-const Oppenheimerid = document.getElementById("Oppenheimer");
-
-console.log(Oppenheimerid);
-
-const show_rating = () => {
-    const rating = "10/10 Excelente";
-    Oppenheimerid.innerHTML = rating;
-    Oppenheimerid.onclick = show_name;
-}
-
-const show_name = () => {
+const despliega_nombre = () => {
     const nombre = "Oppenheimer";
-    Oppenheimerid.innerHTML = nombre;
-    Oppenheimerid.onclick = show_rating;
+    oppenheimer.innerHTML = nombre;
+    oppenheimer.onclick = despliega_rating;
 }
 
-Oppenheimerid.onclick = () =>  {
-    console.log("You click on Oppenheimer");
-    show_rating();
-    Oppenheimerid.onclick = show_name;
+oppenheimer.onclick = () => {
+    console.log("Hiciste click en Oppenheimer");
+    despliega_rating();
 }
 
-// Arrays
 
-const arreglo = ["Element"] // Array size 1 that contains "Element"
+// arreglos
 
-arreglo.push("New elemeng"); // Method push to add a new element as a pile
+const arreglo = ["Elemento"];
 
-arreglo[10] = "Another one"; // Crate new slots but they are empty exept the 10
+arreglo.push("Otro elemento");
 
-// Arrays in JS are also dictionaries (associative arrays)
+arreglo[10] = "Uno más";
 
-arreglo["Eleven"] = "Other one";
+//arreglos asociativos
+arreglo["Once"] = "Otro más";
 
-// Through arrays
-
-// Traditional
-
+//recorrido tradicional del arreglo
 for (let i = 0; i < arreglo.length; i++) {
     console.log(arreglo[i]);
 }
 
-// Alternative way
-
-for (let position in arreglo) { // Show the value in position
-    console.log(position)
+//recorridos alternativos del arreglo
+for(let posicion in arreglo) {
+    console.log(posicion);
 }
 
-for (let value of arreglo) { // Show the value 
-    console.log(value)
+for(let valor of arreglo) {
+    console.log(valor);
 }
 
-// Objects (json Java Script Object Notation)
-
+//objetos (json: javascript object notation)
 const objeto = {
-    atribute_1: "value_1",
-    atribute_2: "value_2",
-    atribute_3: "value_3"
+    atributo_1: "valor_1",
+    atributo_2: "valor_2", 
+    atributo_3: "valor_3"
 }
 
 console.log(objeto);
-console.log(objeto.atribute_1);
+console.log(objeto.atributo_1);
+
+for(let posicion in objeto) {
+    console.log(posicion);
+}
+
+function ejercicio_1() {
+    //Ejercicio del laboratorio
+    //...
+
+    document.getElementById("ejercicio_1").innerHTML = "Respuesta del ejercicio 1";
+}
+
+ejercicio_1();
+
+
+document.getElementById("favorita").onkeyup = () => {
+    
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    
+    document.getElementById("favorita").style.color = `rgb(${red}, ${green}, ${blue})`;
+}
+
+const peliculas = [
+    {
+        nombre: "Titanic",
+        imagen: "https://i.etsystatic.com/27725708/r/il/3989d8/2912524873/il_fullxfull.2912524873_6vc1.jpg",
+        sinopsis: "Historia de amor entre Jack y Rose en el trasatlántico más grande de la época"
+    }, 
+    {
+        nombre: "Oppenheimer",
+        imagen: "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg",
+        sinopsis: "Historia de la bomba atómica"
+    }, 
+    {
+        nombre: "Barbie",
+        imagen: "https://www.instyle.com/thmb/vZCEkHB1nBMIes2tcKTUAMP0zf0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/BarbiePosterEmbed-de7c886812184414977730e920d77a65.jpg",
+        sinopsis: "La muñeca más famosa de la historia"
+    }, 
+    {
+        nombre: "TMNT",
+        imagen: "https://mir-s3-cdn-cf.behance.net/project_modules/hd/5d830b134127975.61ce89a78d10c.jpg",
+        sinopsis: "Las aventuras flipantes de las tortugas verdes en Nueva York"
+    },
+];
+
+function genera_posters() {
+
+    let html = `<div class="columns">`;
+
+    for(let pelicula of peliculas) {
+        html += 
+            `<div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="${pelicula.imagen}" alt="${pelicula.nombre}">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="${pelicula.imagen}" alt="${pelicula.nombre}">
+                            </figure>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4">${pelicula.nombre}</p>
+                            </div>
+                        </div>
+                    
+                        <div class="content">
+                            ${pelicula.sinopsis}
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    html += `</div>`;
+
+    document.getElementById("posters").innerHTML = html;
+}
+
+genera_posters();
