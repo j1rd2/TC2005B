@@ -39,7 +39,7 @@ const http = require('http');
 const server = http.createServer( (request, response) => {
     console.log(request.url);
     response.setHeader('Content-Type', 'text/html')
-    response.write("Hola desde node");
+    response.write("Laboratorio 8 completado :)");
     response.end();
 
 });
