@@ -8,12 +8,12 @@ class Pokemon {
 
     atacar(otroPokemon) {
         const damage = Math.floor(Math.random() * this.ataque);
-        otroPokemon.recibirDanio(damage);
+        otroPokemon.getDano(damage);
         return damage;
     }
 
-    recibirDanio(danio) {
-        this.vida -= danio;
+    getDano(dano) {
+        this.vida -= dano;
         if (this.vida < 0) {
         this.vida = 0;
         }
