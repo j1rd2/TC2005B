@@ -1,4 +1,31 @@
+// Pregunta 1
 
+// Get the number 
+var numero = parseInt(prompt("Ingresa un número:"));
+
+// If the number is valid
+if (!isNaN(numero)) {
+  // Encabezado de la tabla
+  document.write("<table>");
+  document.write("<tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>");
+  
+  // Generar la tabla con números, cuadrados y cubos
+  for (var i = 1; i <= numero; i++) {
+    var cuadrado = i * i;
+    var cubo = i * i * i;
+    
+    document.write("<tr>");
+    document.write("<td>" + i + "</td>");
+    document.write("<td>" + cuadrado + "</td>");
+    document.write("<td>" + cubo + "</td>");
+    document.write("</tr>");
+  }
+  
+  // Close the table
+  document.write("</table>");
+} else {
+  document.write("Número inválido.");
+}
 
 // Pregunta 2
 
