@@ -1,0 +1,17 @@
+{
+  "name": "barbenheimer",
+  "version": "1.0.0",
+  "description": "Proyecto para actividades de Laboratorio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tc2005b"
+  ],
+  "author": "Jesus Ramirez Delgado",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
