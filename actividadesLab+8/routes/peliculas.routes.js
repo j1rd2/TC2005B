@@ -2,6 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const path = require('path');
+
 let peliculas = [
     {
         nombre: "Titanic",
@@ -27,52 +29,7 @@ let peliculas = [
 
 router.get('/new', (request, response, next) => {
 
-    const html = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta charset="utf-8">
-    <title>Películas</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-    <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-    <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
-    </a>
-    
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    </a>
-    </div>
-    </nav>
-    </header>
-    <main>
-    <section class="section">
-    <div class="container">
-    <h1 class="title">Registro de películas</h1>
-    <form action="/peliculas/new" method="POST">
-    <label for="nombre">Nombre de la película</label>
-    <input id="nombre" name="nombre" class="input" type="text" placeholder="Oppenheimer">
-    <br><br>
-    <label for="sinopsis">Sinapsis de la película</label>
-    <textarea id="sinopsis" name="sinopsis" class="textarea" placeholder="La historia de la bomba atómica"></textarea>
-    <br>
-    <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
-    </form>
-    </div>
-    </section>
-    </main>
-    </body>
-    </html>
-    `;
-    
-    response.send(html);
+    response.sendFile(path.join(__dirname, '..', 'views', 'new.html'));
 });
 
 router.post('/new', (request, response, next) => {
