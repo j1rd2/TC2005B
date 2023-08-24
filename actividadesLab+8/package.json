@@ -1,21 +1,23 @@
 {
   "name": "barbenheimer",
   "version": "1.0.0",
-  "description": "Proyecto para actividades de Laboratorio",
+  "description": "Proyecto del curso TC2005B ago-dic 23",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon"
   },
   "keywords": [
+    "express",
     "tc2005b"
   ],
-  "author": "Jesus Ramirez Delgado",
+  "author": "Eduardo Juárez",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.18.2"
   }
 }
