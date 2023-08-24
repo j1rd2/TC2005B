@@ -12,6 +12,5 @@ app.use((request, response, next) => {
     response.send('Hola mundi'); // Manda la respuesta
 });
 
-app.use('/new', (request, response, ne) => )
 
 app.listen(3000);

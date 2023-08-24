@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-200 font-mono">
+    <header>
+        <h1 class="text-center bold">
+            Hello world!
+        </h1>
+        <br>
+        <h2 class="text-center bold text-4xl"> Jesus Ramirez Delgado </h2>
+        <br>
+        <h2>A01274723</h2>
+    </header>
+    <main>
+        <h2> Ejercicios laboratorio 4 </h2>
+        <div class="container mx-auto px-4 text-center">
+            <h3> Ejercicio 2: </h3>
+            <p id="question2"> Realiza la suma de estos dos numeros</p>
+            <p>Escribe tu respuesta</p>
+            <input type="number" id="answer2" placeholder="Justo aqui">
+            <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-full" id="button2">Verificar</button>
+            <p id="result2"></p>
+        </div>
+        <br>
+        <div>
+            <h3>Ejercicio 6: </h3>
+            <div>
+                <h1>Pokémon Battle</h1>
+                <label for="pokemonSelect">Selecciona tu Pokémon:</label>
+                <select id="pokemonSelect">
+                    <option value="charmander">Charmander</option>
+                    <option value="squirtle">Squirtle</option>
+                    <option value="bulbasaur">Bulbasaur</option>
+                </select>
+                <button class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-full" id="battleButton">¡A la Batalla!</button>
+                <div id="battleResult"></div>
+                <script src="pokemon.js"></script>
+            </div>
+        </div>
+        <br>
+        <h2 class="text-center font-bold">Preguntas Laboratorio 4</h2>
+        <br>
+        <div class="grid grid-cols-3 gap-4 text-center">
+            <div>
+                <br>
+                <h3 class="font-bold">¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h3>
+                <br>
+                <p class="text-center">
+                    Realmente similitudes solo el nombre "Java" y poca sintaxis basica debido a su influencia por C y C++, y las diferencias son bastantes.
+                    <br>
+                    - Java es un lenguaje compilado y JS interpretado
+                    <br>
+                    - Java es un lenguaje multiproposito orientado a objetos, mientras que JS multiparadigma
+                    <br>
+                    con su origen de agregar interactividad con paginas web.
+                </p>
+            </div>
+            <br>
+            <div>
+                <h3 class="font-bold">¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h3>
+                <br>
+                <p>
+                    > getFullYear(): Devuelve el año de una fecha como un número de cuatro dígitos.
+                </p>
+                <p>
+                    > getMonth(): Devuelve el mes de una fecha como un número (0 para enero, 1 para febrero, etc.).
+                </p>
+                <p>
+                    > getDate(): Devuelve el día del mes de una fecha como un número.
+                </p>
+                <p>
+                    > getHours(): Devuelve la hora de una fecha como un número.
+                </p>
+                <p>
+                    > getMinutes(): Devuelve los minutos de una fecha como un número.
+                </p>
+            </div>
+            <br>
+            <div>
+                <h3 class="font-bold">¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h3>
+                <br>
+                <p>
+                    > push(): Agrega uno o más elementos al final del arreglo y devuelve la nueva longitud del arreglo.
+                </p>
+                <p>
+                    > pop(): Elimina el último elemento del arreglo y lo devuelve.
+                </p>
+                <p>
+                    > shift(): Elimina el primer elemento del arreglo y lo devuelve, desplazando los demás elementos para llenar el espacio vacío.
+                </p>
+                <p>
+                    > unshift(): Agrega uno o más elementos al principio del arreglo y devuelve la nueva longitud del arreglo.
+                </p>
+                <p>
+                    > splice(): Cambia el contenido de un arreglo eliminando, reemplazando o agregando elementos en una posición específica.
+                </p>
+            </div>
+            <br>
+            <div>
+                <h3 class="font-bold">¿Cómo se declara una variable con alcance local dentro de una función?</h3>
+                <br>
+                <p>Con let</p>
+            </div>
+            <br>
+            <div>
+                <h3 class="font-bold">¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+                <p>
+                    Tiene varias implicaciones como el tema de seguridad ya que pueden ser modificadas facilmente, conflicos entre
+                    <br>
+                    librerias, otras variables, etc...Y dificultad de legibilidad y mantnimiento.
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="bg-fixed text-center">
+            <h3>Describe Material design</h3>
+            <pre class="text-center">
+                Material Design es un sistema de diseño Open Source, desarrollad por Google.
+                Matreial Desing contiene herremientas, componentes que apoyan las buenas practicas
+                en el diseño de interfaz.
+            </pre>
+        </div>
+    </main>
+    <footer>   
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
