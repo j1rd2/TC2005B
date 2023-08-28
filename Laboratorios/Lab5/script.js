@@ -141,5 +141,56 @@ const numeroOriginal = 12345;
 const numeroInverso = inverso(numeroOriginal);
 console.log("Número inverso:", numeroInverso);
 
-// Ejercicio 6
+// Laboratoio 6
+
+// Variables
+const passwordInput = document.getElementById("password");
+const confirmPasswordInput = document.getElementById("confirmPassword");
+const message = document.getElementById("message");
+
+document.getElementById("passwordForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const password = passwordInput.value;
+  const confirmPassword = confirmPasswordInput.value;
+
+  if (password !== confirmPassword) {
+    message.textContent = "Passwords do not match.";
+    message.style.color = "red";
+  } else if (password.length < 8) {
+    message.textContent = "Password should be at least 8 characters long.";
+    message.style.color = "orange";
+  } else {
+    message.textContent = "Password is valid!";
+    message.style.color = "green";
+  }
+});
+
+// Cambiar texto color
+
+const textColor = document.getElementById("changeColor");
+
+textColor.addEventListener("click", () => {
+  const randomColor = getRandomColor();
+  textColor.style.color = randomColor;
+});
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+// Referencias
+
+const linkButton = document.getElementById("linkButton");
+
+linkButton.addEventListener("click", () => {
+  // Navigate to another page when the button is clicked
+  window.location.href = "https://www.w3resource.com/javascript/form/password-validation.php";
+});
+
 

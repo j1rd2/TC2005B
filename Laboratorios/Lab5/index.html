@@ -128,10 +128,34 @@
         <br><br>
         <div class="box-content bg-green-950 rounded-xl justify-items-center bg-fixed">
             <h1 class="text-center text-center text-lg">Valida tu contraseña</h1>
+            <form id="passwordForm">
+                <label for="password">Password:</label>
+                <input class="bg-black" type="password" id="password" required>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input class="bg-black" type="password" id="confirmPassword" required>
+                <p id="message"></p>
+                <button type="submit">Validar</button>          
+            </form>
+            <br><br>
+            <div>
+                <h1 class="text-center text-lg">Cambia el color de la fuente con un click!</h1>
+                <br>
+                <button type="button" id="changeColor" onclick="changeColor()">Click para cambiar color</button>
+            </div>
+            <div>
+                <h1 class="text-center text-lg">Referencias</h1>
+                <pre>
+                    No author. (2019). <span class="text-italic">JavaScript : HTML Form validation - checking for password.</span> w3schools. 
+                    https://www.w3resource.com/javascript/form/password-validation.php
+                </pre>
+                <br>
+                <button type="button" id="linkButton">Link to reference</button>
+
+            </div>
         </div>
         <h1 class="text-center text-bold">Preguntas Laboratorio 6</h1>
         <div class="box-content bg-violet-950 rounded-xl justify-items-center bg-fixed">
-            <h2 class="text-center text-center text-lg">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
+            <h2 class="text-center text-lg">¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
             <br>
             <pre>
                 Algunos de los motivos pueden ser:
