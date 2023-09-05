@@ -235,6 +235,13 @@ const server = http.createServer( (request, response) => {
         `);
     } else if (request.url == "/vender" && request.method == "POST") {
 
+        const datos = [];
+        
+        request.on('data', (dato) => {
+            console.log(dato);
+            //datos.push(dato);
+        });
+
         response.write(`Producto Registrado`);
         response.end();
 
