@@ -1,5 +1,11 @@
 const http = require('http');
-const querystring = require('querystring');
+const querystring = require('querystring'); // Modulo de Node para analizar cadenas de consulta URL
+const fs = require('fs'); // Manejo de archivos
+
+const guardarDatosEnArchivo = (datos) => {
+    const texto = JSON.stringify(datos, null, 2); // Convertir el objeto en una cadena con formato
+    fs.writeFileSync('datos.txt', texto); // Guardar en archivo
+};
 
 const server = http.createServer( (request, response) => {    
     console.log(request.url);
@@ -247,9 +253,13 @@ const server = http.createServer( (request, response) => {
         return request.on('end', () => {
             const datos_completos = Buffer.concat(datos).toString();
             console.log(`Datos Completos: ${datos_completos}`);
+
             const parsedData = querystring.parse(datos_completos);
             console.log('Datos Parseados:', parsedData);
-        
+            
+            // Guardar datos en un archivo
+            guardarDatosEnArchivo(parsedData);
+            
             const marca = parsedData['marca'];
             const año = parsedData['año'];
             const descripcion = parsedData['descripcion'];

@@ -1,0 +1,6 @@
+{
+  "marca": "Specialized",
+  "año": "2021",
+  "descripcion": "Hola",
+  "registrar": "registrar"
+}
