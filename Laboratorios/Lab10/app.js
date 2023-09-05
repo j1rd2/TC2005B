@@ -117,6 +117,38 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
+    } else if (request.url == "/vuelta") {
+        response.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Laboratorio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            <header>
+                <nav class="bg-red-600 p-4">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-white">About</a></li>
+                            <li><a href="#" class="text-white">Services</a></li>
+                            <li><a href="#" class="text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <h1 class="font-mono text-center text-4xl text-black">la Vuelta</h1>
+            </main>
+            <footer>
+            </footer>
+        </body>
+        </html>
+        `);
     } else if (request.url == "/giro") {
         response.write(`
         <!DOCTYPE html>
@@ -143,6 +175,56 @@ const server = http.createServer( (request, response) => {
             </header>
             <main>
                 <h1 class="font-mono text-center text-4xl text-black">Giro di Italia</h1>
+            </main>
+            <footer>
+            </footer>
+        </body>
+        </html>
+        `);
+    } else if (request.url == "/vender") {
+        response.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Laboratorio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            <header>
+                <nav class="bg-sky-900 p-4">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-white">About</a></li>
+                            <li><a href="#" class="text-white">Services</a></li>
+                            <li><a href="#" class="text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <h1 class="font-mono text-center text-4xl text-black"> Quiero vender mi bici </h1>
+                <br>
+                <div>
+                    <form action="/new" method="POST">
+                        <label for="marca">Marca</label>
+                        <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
+                        <br><br>
+                        <label for="modelo">Modelo de tu bici</label>
+                        <input id="modelo" name-"modelo" class="input" type="text" placeholder="Modelo">
+                        <br><br>
+                        <label for="año">Año</label>
+                        <input id="año" name="año" class="input" type="text" placeholder="Año aqui">
+                        <br><br>
+                        <label for="descripcion"> Descripcion </label>
+                        <textarea id=descripcion" name="descripcion" class="textarea" placeholder="Escribe una breve descripcion aqui"></textarea>
+                        <br>
+                        <input id="registrar" name="registrar" type="submit" value="registrar">
+                    </form>
+                </div>
             </main>
             <footer>
             </footer>
