@@ -1,4 +1,6 @@
 const http = require('http');
+const querystring = require('querystring');
+
 const server = http.createServer( (request, response) => {    
     console.log(request.url);
     console.log(request.method);
@@ -236,14 +238,31 @@ const server = http.createServer( (request, response) => {
     } else if (request.url == "/vender" && request.method == "POST") {
 
         const datos = [];
-        
+
         request.on('data', (dato) => {
-            console.log(dato);
-            //datos.push(dato);
+            // console.log(dato);
+            datos.push(dato);
         });
 
-        response.write(`Producto Registrado`);
-        response.end();
+        return request.on('end', () => {
+            const datos_completos = Buffer.concat(datos).toString();
+            console.log(`Datos Completos: ${datos_completos}`);
+            const parsedData = querystring.parse(datos_completos);
+            console.log('Datos Parseados:', parsedData);
+        
+            const marca = parsedData['marca'];
+            const año = parsedData['año'];
+            const descripcion = parsedData['descripcion'];
+            const registrar = parsedData['registrar'];
+        
+            console.log(`Marca: ${marca}`);
+            console.log(`Año: ${año}`);
+            console.log(`Descripción: ${descripcion}`);
+            console.log(`Registrar: ${registrar}`);
+        
+            response.write(`La bicicleta ${marca} del año ${año} fue registrada con la descripción: ${descripcion}`);
+            return response.end();
+        });
 
     } else {
         response.statusCode = 404;
