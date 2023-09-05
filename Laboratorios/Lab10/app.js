@@ -1,6 +1,8 @@
 const http = require('http');
 const server = http.createServer( (request, response) => {    
     console.log(request.url);
+    console.log(request.method);
+
     if (request.url == "/") {
         response.setHeader('Content-Type', 'text/html');
         response.write(`
@@ -181,7 +183,7 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
-    } else if (request.url == "/vender") {
+    } else if (request.url == "/vender" && request.method == "GET") {
         response.write(`
         <!DOCTYPE html>
         <html lang="en">
@@ -209,7 +211,7 @@ const server = http.createServer( (request, response) => {
                 <h1 class="font-mono text-center text-4xl text-black"> Quiero vender mi bici </h1>
                 <br>
                 <div>
-                    <form action="/new" method="POST">
+                    <form action="/vender" method="POST">
                         <label for="marca">Marca</label>
                         <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
                         <br><br>
@@ -231,6 +233,11 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
+    } else if (request.url == "/vender" && request.method == "POST") {
+
+        response.write(`Producto Registrado`);
+        response.end();
+
     } else {
         response.statusCode = 404;
         response.write(`
