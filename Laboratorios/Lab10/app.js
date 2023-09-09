@@ -28,10 +28,49 @@ const server = http.createServer( (request, response) => {
                         <img class="justify-items-start w-20 h-20" src="logo.png"> 
                         <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
                         <ul class="flex space-x-4">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
+                            <li><a href="#" class="text-white">Noticias</a></li>
+                            <li><a href="#" class="text-white">Tienda</a></li>
+                            <li><a href="#" class="text-white">Taller</a></li>
+                            <li><a href="#" class="text-white">¿Quienes somos?</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
+                <div class="relative bg-cover" style="background-image: url('tienda.png'); height: 800px;">
+                    <h1 class="absolute inset-x-0 bottom-0 h-48 font-mono text-center text-5xl font-semibold text-white">Compra y vende productos, bicicletas, etc...</h1>
+                    <div class="absolute inset-x-0 bottom-0 h-48 font-mono text-center flex justify-center text-white font-semibold">
+                        <button type="button">Saber mas</button>
+                    </div>
+                </div>
+            </main>
+            <footer>
+            </footer>
+        </body>
+        </html>
+        `);
+        response.end();
+    } else if (request.url == "/noticias") {
+        response.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Laboratorio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            <header>
+                <nav class="bg-red-600 p-4">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="text-white">Noticias</a></li>
+                            <li><a href="#" class="text-white">Tienda</a></li>
+                            <li><a href="#" class="text-white">Taller</a></li>
+                            <li><a href="#" class="text-white">¿Quienes somos?</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -63,7 +102,7 @@ const server = http.createServer( (request, response) => {
         </html>
         `);
         response.end();
-    } else if (request.url == "/tour") {
+    } else if (request.url == "/noticias/tour") {
         response.write(`
         <!DOCTYPE html>
         <html lang="en">
@@ -95,7 +134,8 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
-    } else if (request.url == "/vuelta") {
+        response.end();
+    } else if (request.url == "/noticias/vuelta") {
         response.write(`
         <!DOCTYPE html>
         <html lang="en">
@@ -127,39 +167,8 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
-    } else if (request.url == "/vuelta") {
-        response.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Laboratorio</title>
-            <script src="https://cdn.tailwindcss.com"></script>
-        </head>
-        <body>
-            <header>
-                <nav class="bg-red-600 p-4">
-                    <div class="container mx-auto flex justify-between items-center">
-                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
-                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
-                        <ul class="flex space-x-4">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <h1 class="font-mono text-center text-4xl text-black">la Vuelta</h1>
-            </main>
-            <footer>
-            </footer>
-        </body>
-        </html>
-        `);
-    } else if (request.url == "/giro") {
+        response.end();
+    } else if (request.url == "/noticias/giro") {
         response.write(`
         <!DOCTYPE html>
         <html lang="en">
@@ -191,7 +200,41 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
-    } else if (request.url == "/vender" && request.method == "GET") {
+        response.end();
+    } else if (request.url == "/tienda") {
+        response.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Laboratorio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            <header>
+                <nav class="bg-sky-900 p-4">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-white">About</a></li>
+                            <li><a href="#" class="text-white">Services</a></li>
+                            <li><a href="#" class="text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
+            </main>
+            <footer>
+            </footer>
+        </body>
+        </html>
+        `);
+        response.end();
+    } else if (request.url == "/tienda/vender" && request.method == "GET") {
         response.write(`
         <!DOCTYPE html>
         <html lang="en">
@@ -218,22 +261,26 @@ const server = http.createServer( (request, response) => {
             <main>
                 <h1 class="font-mono text-center text-4xl text-black"> Quiero vender mi bici </h1>
                 <br>
-                <div>
-                    <form action="/vender" method="POST">
-                        <label for="marca">Marca</label>
-                        <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
-                        <br><br>
-                        <label for="modelo">Modelo de tu bici</label>
-                        <input id="modelo" name-"modelo" class="input" type="text" placeholder="Modelo">
-                        <br><br>
-                        <label for="año">Año</label>
-                        <input id="año" name="año" class="input" type="text" placeholder="Año aqui">
-                        <br><br>
-                        <label for="descripcion"> Descripcion </label>
-                        <textarea id=descripcion" name="descripcion" class="textarea" placeholder="Escribe una breve descripcion aqui"></textarea>
-                        <br>
-                        <input id="registrar" name="registrar" type="submit" value="registrar">
-                    </form>
+                <div class="flex justify-center">
+                    <div>
+                        <form action="/tienda/vender" method="POST">
+                            <label for="marca">Marca: </label>
+                            <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
+                            <br><br>
+                            <label for="modelo">Modelo: </label>
+                            <input id="modelo" name-"modelo" class="input" type="text" placeholder="Modelo">
+                            <br><br>
+                            <label for="año">Año: </label>
+                            <input id="año" name="año" class="input" type="text" placeholder="Año aqui">
+                            <br><br>
+                            <label for="descripcion"> Descripcion: </label>
+                            <textarea id=descripcion" name="descripcion" class="textarea resize" placeholder="Escribe una breve descripcion aqui"></textarea>
+                            <br><br>
+                            <div class="text-center">
+                                <input class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto" id="registrar" name="registrar" type="submit" value="registrar">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </main>
             <footer>
@@ -241,7 +288,8 @@ const server = http.createServer( (request, response) => {
         </body>
         </html>
         `);
-    } else if (request.url == "/vender" && request.method == "POST") {
+        response.end();
+    } else if (request.url == "/tienda/vender" && request.method == "POST") {
 
         const datos = [];
 
@@ -273,7 +321,6 @@ const server = http.createServer( (request, response) => {
             response.write(`La bicicleta ${marca} del año ${año} fue registrada con la descripción: ${descripcion}`);
             return response.end();
         });
-
     } else {
         response.statusCode = 404;
         response.write(`
