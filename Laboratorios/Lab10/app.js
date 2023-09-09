@@ -232,7 +232,7 @@ const server = http.createServer( (request, response) => {
             </header>
             <main>
                 <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
-                <div class="grid grid-cols-4 justify-items-center"> `;
+                <div class="grid grid-cols-4 justify-items-center gap-4"> `;
                 for (let producto of productos) {
                     html+=
                     `<div class="max-w-sm rounded overflow-hidden shadow-lg">
@@ -292,8 +292,8 @@ const server = http.createServer( (request, response) => {
                             <label for="modelo">Modelo: </label>
                             <input id="modelo" name-"modelo" class="input" type="text" placeholder="Modelo">
                             <br><br>
-                            <label for="anioo">Año: </label>
-                            <input id="anioo" name="anio" class="input" type="text" placeholder="Año aqui">
+                            <label for="anio">Año: </label>
+                            <input id="anio" name="anio" class="input" type="text" placeholder="Año aqui">
                             <br><br>
                             <label for="descripcion"> Descripcion: </label>
                             <textarea id=descripcion" name="descripcion" class="textarea resize" placeholder="Escribe una breve descripcion aqui"></textarea>
