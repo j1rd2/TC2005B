@@ -1,0 +1,17 @@
+Laboratio 10 
+> Se creo desde 0 la pagina para iniciar Laboratorio 10
+> Se creo un servidor usando node
+> Se agregaron 4 nuevas rutas
+> Se agrego un form con un submit
+> Se agrego para responder peticiones GET y POST
+> Responde eventos del request
+> Procesa los datos de la forma
+> Guarda peticion POST en un txt
+> Se genero una pagina de tienda y se generan los productos con el formulario vender
+
+Laboratorio 11:
+> Se creo el package.json con comando "npm install"
+> Para actualizar en automatico el servidor se instalo nodemon con "install --save-dev"
+> Se instalo nodemon con "npm install --save-dev nodemon"
+> Se configuro nodemon
+
