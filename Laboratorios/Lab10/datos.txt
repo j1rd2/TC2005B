@@ -1,6 +1,7 @@
 {
   "marca": "Specialized",
+  "modelo": "Epic",
   "anio": "2023",
-  "descripcion": "hola esre es un mensaje de prueba para ver que jale jajajaja",
+  "descripcion": "Hola",
   "registrar": "registrar"
 }

@@ -290,7 +290,7 @@ const server = http.createServer( (request, response) => {
                             <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
                             <br><br>
                             <label for="modelo">Modelo: </label>
-                            <input id="modelo" name-"modelo" class="input" type="text" placeholder="Modelo">
+                            <input id="modelo" name="modelo" class="input" type="text" placeholder="Modelo">
                             <br><br>
                             <label for="anio">Año: </label>
                             <input id="anio" name="anio" class="input" type="text" placeholder="Año aqui">
@@ -341,7 +341,7 @@ const server = http.createServer( (request, response) => {
             console.log(`Descripción: ${descripcion}`);
             console.log(`Registrar: ${registrar}`);
         
-            response.write(`La bicicleta ${marca} del año ${anio} fue registrada con la descripción: ${descripcion}`);
+            response.write(`La bicicleta ${marca}, modelo ${modelo} del año ${anio} fue registrada con la descripción: ${descripcion}`);
 
             productos.push ({
                 marca: marca,
