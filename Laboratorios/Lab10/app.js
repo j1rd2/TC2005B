@@ -1,3 +1,22 @@
+const express = require('express');
+const app = express();
+
+// Middleware
+
+app.use((request, response, next) => {
+
+    console.log('Middleware');
+    next() // Permite a la peticion avanzar al siguiente middleware
+});
+
+app.use((request, response, next) => {
+    console.log('Otro middleware :0');
+    response.send("aios"); // Manda la respuesta
+});
+
+app.listen(3000);
+
+/*
 const http = require('http');
 const querystring = require('querystring'); // Modulo de Node para analizar cadenas de consulta URL
 const fs = require('fs'); // Manejo de archivos
@@ -389,3 +408,4 @@ const server = http.createServer( (request, response) => {
 });
 
 server.listen(3000);
+*/
