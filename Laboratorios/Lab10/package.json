@@ -1,0 +1,11 @@
+{
+  "name": "ciclismo",
+  "version": "1.0.0",
+  "description": "Proyecto para la clase de construccion de software y mini proyecto personal",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesus Ramirez Delgado",
+  "license": "ISC"
+}
