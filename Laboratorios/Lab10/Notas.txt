@@ -14,4 +14,7 @@ Laboratorio 11:
 > Para actualizar en automatico el servidor se instalo nodemon con "install --save-dev"
 > Se instalo nodemon con "npm install --save-dev nodemon"
 > Se configuro nodemon
+> Se agrego para comprender la estructura basica de express
+> Se registraron rutas con GET y POST
+> Se instalo bodyparser para manipular facilmente peticiones con "npm install --save body-parser"
 
