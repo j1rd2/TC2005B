@@ -7,6 +7,11 @@ const guardarDatosEnArchivo = (datos) => {
     fs.writeFileSync('datos.txt', texto); // Guardar en archivo
 };
 
+// Objetos 
+// En el futuro se puede agregar imagen
+let productos = [];
+
+
 const server = http.createServer( (request, response) => {    
     console.log(request.url);
     console.log(request.method);
@@ -202,7 +207,7 @@ const server = http.createServer( (request, response) => {
         `);
         response.end();
     } else if (request.url == "/tienda") {
-        response.write(`
+        let html = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -227,13 +232,30 @@ const server = http.createServer( (request, response) => {
             </header>
             <main>
                 <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
+                <div class="grid grid-cols-4 justify-items-center"> `;
+                for (let producto of productos) {
+                    html+=
+                    `<div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4">${producto.marca}</div>
+                        <br>
+                        <div class="px-6 py-4">${producto.modelo}</div>
+                        <br>
+                        <div class="px-6 py-4">${producto.anio}</div>
+                        <br>
+                        <div class="px-6 py-4">
+                            ${producto.descripcion}
+                        </div>
+                        <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto">Comprar</button>
+                    </div>`;
+                }
+    html += `   </div>
             </main>
             <footer>
             </footer>
         </body>
         </html>
-        `);
-        response.end();
+        `;
+        response.write(html);
     } else if (request.url == "/tienda/vender" && request.method == "GET") {
         response.write(`
         <!DOCTYPE html>
@@ -270,8 +292,8 @@ const server = http.createServer( (request, response) => {
                             <label for="modelo">Modelo: </label>
                             <input id="modelo" name-"modelo" class="input" type="text" placeholder="Modelo">
                             <br><br>
-                            <label for="año">Año: </label>
-                            <input id="año" name="año" class="input" type="text" placeholder="Año aqui">
+                            <label for="anioo">Año: </label>
+                            <input id="anioo" name="anio" class="input" type="text" placeholder="Año aqui">
                             <br><br>
                             <label for="descripcion"> Descripcion: </label>
                             <textarea id=descripcion" name="descripcion" class="textarea resize" placeholder="Escribe una breve descripcion aqui"></textarea>
@@ -309,16 +331,25 @@ const server = http.createServer( (request, response) => {
             guardarDatosEnArchivo(parsedData);
             
             const marca = parsedData['marca'];
-            const año = parsedData['año'];
+            const modelo = parsedData['modelo'];
+            const anio = parsedData['anio'];
             const descripcion = parsedData['descripcion'];
             const registrar = parsedData['registrar'];
         
             console.log(`Marca: ${marca}`);
-            console.log(`Año: ${año}`);
+            console.log(`Año: ${anio}`);
             console.log(`Descripción: ${descripcion}`);
             console.log(`Registrar: ${registrar}`);
         
-            response.write(`La bicicleta ${marca} del año ${año} fue registrada con la descripción: ${descripcion}`);
+            response.write(`La bicicleta ${marca} del año ${anio} fue registrada con la descripción: ${descripcion}`);
+
+            productos.push ({
+                marca: marca,
+                modelo: modelo,
+                anio: anio,
+                descripcion: descripcion
+            });
+
             return response.end();
         });
     } else {

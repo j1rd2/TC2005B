@@ -1,6 +1,6 @@
 {
   "marca": "Specialized",
-  "año": "2021",
-  "descripcion": "asdas",
+  "anio": "2023",
+  "descripcion": "hola esre es un mensaje de prueba para ver que jale jajajaja",
   "registrar": "registrar"
 }
