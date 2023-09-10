@@ -23,6 +23,7 @@
             <main>
                 <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
                 <div class="grid grid-cols-4 justify-items-center gap-4"> 
+            <% if (productos.length > 0) { %>
                 <% for (let producto of productos) { %>
                     <div class="max-w-sm rounded overflow-hidden shadow-lg">
                         <div class="px-6 py-4"><%= producto.marca %></div>
@@ -36,6 +37,9 @@
                         </div>
                         <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto">Comprar</button>
                     </div>
+                 <% } %>
+             <% } else { %>
+                    <h1> No hay productos registrados </h1>
              <% } %>
                 </div>
             </main>
