@@ -387,4 +387,6 @@ app.use((request, response, next) => {
     response.send(html);
 });
 
+console.log('Describe el archivo package JSON: Un archvio que mantiene la configuracion de los proyectos de NodeJs. Incluye dependencias, metadatos, scripts, etc...');
+
 app.listen(3000);
