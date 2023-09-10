@@ -24,5 +24,7 @@ Laboratorio 11:
 Labotario 12:
 > Se creo carpeta rutas para alojar las diferentes rutas de los modulos
 > Se creo la ruta del modulo de tienda
+> Se creo la ruta del modulo principal (pagina inicio y noticas)
+> Se creo y configuro la carpeta public donde se alojaran los elementos graficos
 
 
