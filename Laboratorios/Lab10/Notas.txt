@@ -27,5 +27,9 @@ Labotario 12:
 > Se creo la ruta del modulo principal (pagina inicio y noticas)
 > Se creo y configuro la carpeta public donde se alojaran los elementos graficos
 > Se instalo el templating engine EJS con el comando "npm install --save ejs"
+> Se creo el template de tienda
+> Se creo la carpeta controladores y se creo el controlador de tienda
+> En controladores se agregaron las acciones del controlador get_vender y post_vener para vender 
+
 
 
