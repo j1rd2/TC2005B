@@ -1,22 +1,8 @@
 const express = require('express');
-const app = express();
 
-//Para usar body parser
+const router = express.Router();
 
-const bodyParser = require ('body-parser');
-app.use(bodyParser.urlencoded({extended: false}));
-
-const fs = require('fs');
-
-// Middleware
-
-app.use((request, response, next) => {
-
-    console.log('Middleware');
-    next() // Permite a la peticion avanzar al siguiente middleware
-});
-/*
-app.get('/', (request, response, next) => {
+router.get('/', (request, response, next) => {
 
     let html = `
     <!DOCTYPE html>
@@ -54,11 +40,13 @@ app.get('/', (request, response, next) => {
             </footer>
         </body>
         </html>
-        `;
-        response.send(html);
+    `;
+
+    response.send(html);
 });
 
-app.get('/noticias',(request, response, next) => {
+router.get('/noticias', (request, response, next) => {
+
     let html = `
     <!DOCTYPE html>
         <html lang="en">
@@ -108,10 +96,12 @@ app.get('/noticias',(request, response, next) => {
         </body>
         </html>
     `;
+
     response.send(html);
 });
 
-app.get('/noticias/tour',(request, response, next) => {
+router.get('/noticias/tour', (request, response, next) => {
+
     let html = `
     <!DOCTYPE html>
         <html lang="en">
@@ -143,10 +133,12 @@ app.get('/noticias/tour',(request, response, next) => {
         </body>
         </html>
     `;
+
     response.send(html);
 });
 
-app.get('/noticias/vuelta',(request, response, next) => {
+router.get('/noticias/vuelta', (request, response, next) => {
+
     let html = `
     <!DOCTYPE html>
         <html lang="en">
@@ -178,10 +170,12 @@ app.get('/noticias/vuelta',(request, response, next) => {
         </body>
         </html>
     `;
+
     response.send(html);
 });
 
-app.get('/noticias/giro',(request, response, next) => {
+router.get('/noticias/giro', (request, response, next) => {
+
     let html = `
     <!DOCTYPE html>
         <html lang="en">
@@ -213,51 +207,8 @@ app.get('/noticias/giro',(request, response, next) => {
         </body>
         </html>
     `;
-    response.send(html);
-});
-*/
-const rutasPrincipal = require('./routes/principal.routes');
-app.use('/',rutasPrincipal);
 
-const rutasTienda = require ('./routes/tienda.routes');
-app.use('/', rutasTienda);
-
-app.use((request, response, next) => {
-    response.statusCode = 404;
-    let html = `
-    <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <title>Laboratorio</title>
-            <script src="https://cdn.tailwindcss.com"></script>
-        </head>
-        <body>
-            <header>
-                <nav class="bg-black p-4">
-                    <div class="container mx-auto flex justify-between items-center">
-                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
-                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
-                        <ul class="flex space-x-4">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-            <main>
-                <h1 class="font-mono text-center text-4xl text-black">Page not found</h1>
-            </main>
-            <footer>
-            </footer>
-        </body>
-        </html>
-    `;
     response.send(html);
 });
 
-console.log('Describe el archivo package JSON: Un archvio que mantiene la configuracion de los proyectos de NodeJs. Incluye dependencias, metadatos, scripts, etc...');
-
-app.listen(3000);
+module.exports = router;

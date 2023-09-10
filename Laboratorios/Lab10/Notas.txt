@@ -22,5 +22,7 @@ Laboratorio 11:
 > Se agrego la funcionalidad para escribir archivo txt
 
 Labotario 12:
+> Se creo carpeta rutas para alojar las diferentes rutas de los modulos
+> Se creo la ruta del modulo de tienda
 
 
