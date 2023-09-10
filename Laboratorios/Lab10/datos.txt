@@ -1,7 +1,8 @@
-{
-  "marca": "Specialized",
-  "modelo": "Epic",
-  "anio": "2023",
-  "descripcion": "Hola",
-  "registrar": "registrar"
-}
+[
+  {
+    "marca": "Specialized",
+    "modelo": "Epic",
+    "anio": "2023",
+    "descripcion": "Hola123"
+  }
+]

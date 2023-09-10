@@ -6,6 +6,8 @@ const app = express();
 const bodyParser = require ('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+const fs = require('fs');
+
 let productos = []; // Arreglo de productos
 
 // Middleware
@@ -335,6 +337,17 @@ app.post('/tienda/vender', (request, response, next) => {
         descripcion: request.body.descripcion
     });
 
+    const texto = JSON.stringify(productos, null, 2);
+
+    fs.writeFile('datos.txt', texto, (err) => {
+        if (err) {
+    console.error(err);
+    res.status(500).send('Error al guardar los datos');
+    } else {
+        console.log('Datos guardados con éxito');
+    }
+    });
+
     response.redirect('/tienda');
 });
 
@@ -375,49 +388,3 @@ app.use((request, response, next) => {
 });
 
 app.listen(3000);
-
-/*
-    } else if (request.url == "/tienda/vender" && request.method == "POST") {
-
-        const datos = [];
-
-        request.on('data', (dato) => {
-            // console.log(dato);
-            datos.push(dato);
-        });
-
-        return request.on('end', () => {
-            const datos_completos = Buffer.concat(datos).toString();
-            console.log(`Datos Completos: ${datos_completos}`);
-
-            const parsedData = querystring.parse(datos_completos);
-            console.log('Datos Parseados:', parsedData);
-            
-            // Guardar datos en un archivo
-            guardarDatosEnArchivo(parsedData);
-            
-            const marca = parsedData['marca'];
-            const modelo = parsedData['modelo'];
-            const anio = parsedData['anio'];
-            const descripcion = parsedData['descripcion'];
-            const registrar = parsedData['registrar'];
-        
-            console.log(`Marca: ${marca}`);
-            console.log(`Año: ${anio}`);
-            console.log(`Descripción: ${descripcion}`);
-            console.log(`Registrar: ${registrar}`);
-        
-            response.write(`La bicicleta ${marca}, modelo ${modelo} del año ${anio} fue registrada con la descripción: ${descripcion}`);
-
-            productos.push ({
-                marca: marca,
-                modelo: modelo,
-                anio: anio,
-                descripcion: descripcion
-            });
-
-            return response.end();
-        });
-    } 
-server.listen(3000);
-*/
