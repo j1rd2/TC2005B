@@ -6,6 +6,8 @@ const app = express();
 const bodyParser = require ('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+let productos = []; // Arreglo de productos
+
 // Middleware
 
 app.use((request, response, next) => {
@@ -73,6 +75,14 @@ app.get('/tienda/vender', (request, response, next) => {
 
 app.post('/tienda/vender', (request, response, next) => {
     console.log(request.body);
+
+    productos.push ({
+        marca: request.body.marca,
+        modelo: request.body.modelo,
+        anio: request.body.anio,
+        descripcion: request.body.descripcion
+    });
+
     response.redirect('/');
 });
 
