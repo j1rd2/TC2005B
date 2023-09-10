@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Laboratorio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            <header>
+                <nav class="bg-sky-900 p-4">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-white">About</a></li>
+                            <li><a href="#" class="text-white">Services</a></li>
+                            <li><a href="#" class="text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
+                <div class="grid grid-cols-4 justify-items-center gap-4"> 
+                <% for (let producto of productos) { %>
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4"><%= producto.marca %></div>
+                        <br>
+                        <div class="px-6 py-4"><%= producto.modelo %></div>
+                        <br>
+                        <div class="px-6 py-4"><%= producto.anio %></div>
+                        <br>
+                        <div class="px-6 py-4">
+                            <%= producto.descripcion %>
+                        </div>
+                        <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto">Comprar</button>
+                    </div>
+             <% } %>
+                </div>
+            </main>
+            <footer>
+            </footer>
+        </body>
+        </html>

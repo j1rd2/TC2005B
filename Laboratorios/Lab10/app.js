@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+// Para usar templates
+app.set('view.engine', 'ejs');
+app.set('views', 'views');
+
 
 const path = require('path');
 app.use(express.static(path.join(__dirname, 'public'))); // Middleware para los elementos de carpeta public

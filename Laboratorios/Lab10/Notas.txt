@@ -26,5 +26,6 @@ Labotario 12:
 > Se creo la ruta del modulo de tienda
 > Se creo la ruta del modulo principal (pagina inicio y noticas)
 > Se creo y configuro la carpeta public donde se alojaran los elementos graficos
+> Se instalo el templating engine EJS con el comando "npm install --save ejs"
 
 
