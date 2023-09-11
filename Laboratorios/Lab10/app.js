@@ -67,6 +67,11 @@ app.use((request, response, next) => {
 });
 
 console.log('Describe el archivo package JSON: Un archvio que mantiene la configuracion de los proyectos de NodeJs. Incluye dependencias, metadatos, scripts, etc...');
+
 console.log('¿Que otros templating engines existen para node: Existen varios que se adaptan a diferentes necesidades o prioridades como pug que tiene una sintaxis muy limpia, handlebars que es muy facil de aprender o mustache que es extremadamente facil de aprender y compatible con otros lenguajes');
+
+console.log('Beneficios MVC: Considero que tienes un proyecto mas limpio y organizado y a la larga es mas facil de mantener. Igual como es facil reutilizar codigo y separarlo por su proposito');
+
+console.log('Desventajas MVC: Considero tiene una curva de aprendizaje mas larga y complejidad mayor. Igual mantener que los datos se sincronicen es complicado.')
 
 app.listen(3000);

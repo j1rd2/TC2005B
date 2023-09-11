@@ -21,7 +21,7 @@ Laboratorio 11:
 > Se agrego la ruta a error 404
 > Se agrego la funcionalidad para escribir archivo txt
 
-Labotario 12:
+Labotario 12 y 13:
 > Se creo carpeta rutas para alojar las diferentes rutas de los modulos
 > Se creo la ruta del modulo de tienda
 > Se creo la ruta del modulo principal (pagina inicio y noticas)
@@ -31,6 +31,10 @@ Labotario 12:
 > Se creo la carpeta controladores y se creo el controlador de tienda
 > En controladores se agregaron las acciones del controlador get_vender y post_vener para vender
 > En rutas tienda se conecto con los controladores de tienda
+> Se agregaron las vistas y controladores de principal
+> Se respondio a la pregunta del laboratorio 12
+> Se creo la carpeta modelos y se creo el modelo de producto
+
 
 
 

@@ -1,8 +1,6 @@
-[
-  {
-    "marca": "Specialized",
-    "modelo": "Epic",
-    "anio": "2023",
-    "descripcion": "Hola"
-  }
-]
+{
+  "marca": "Specialized",
+  "modelo": "Epic",
+  "anio": "2023",
+  "descripcion": "Hola"
+}

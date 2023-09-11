@@ -1,6 +1,7 @@
 const fs = require('fs');
 
-let productos = []; // Arreglo de productos
+const Producto = require('../models/tienda.model');
+const modelo = require('../models/tienda.model');
 
 exports.get_vender = (request, response, next) => {
     response.render ('vender.ejs');
@@ -9,14 +10,16 @@ exports.get_vender = (request, response, next) => {
 exports.post_vender = (request, response, next) => {
     console.log(request.body);            
 
-    productos.push ({
+    const producto = new Producto ({
         marca: request.body.marca,
         modelo: request.body.modelo,
         anio: request.body.anio,
         descripcion: request.body.descripcion
     });
 
-    const texto = JSON.stringify(productos, null, 2);
+    producto.save();
+
+    const texto = JSON.stringify(producto, null, 2);
 
     fs.writeFile('datos.txt', texto, (err) => {
         if (err) {
@@ -31,6 +34,6 @@ exports.post_vender = (request, response, next) => {
 };
 
 exports.get_tienda = (request, response, next) => {
-    response.render('tienda.ejs', {productos: productos}
+    response.render('tienda.ejs', {productos: Producto.fetchAll()}
     );
 };
