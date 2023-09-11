@@ -67,5 +67,6 @@ app.use((request, response, next) => {
 });
 
 console.log('Describe el archivo package JSON: Un archvio que mantiene la configuracion de los proyectos de NodeJs. Incluye dependencias, metadatos, scripts, etc...');
+console.log('¿Que otros templating engines existen para node: Existen varios que se adaptan a diferentes necesidades o prioridades como pug que tiene una sintaxis muy limpia, handlebars que es muy facil de aprender o mustache que es extremadamente facil de aprender y compatible con otros lenguajes');
 
 app.listen(3000);

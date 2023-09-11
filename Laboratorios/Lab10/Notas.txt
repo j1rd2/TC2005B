@@ -29,7 +29,8 @@ Labotario 12:
 > Se instalo el templating engine EJS con el comando "npm install --save ejs"
 > Se creo el template de tienda
 > Se creo la carpeta controladores y se creo el controlador de tienda
-> En controladores se agregaron las acciones del controlador get_vender y post_vener para vender 
+> En controladores se agregaron las acciones del controlador get_vender y post_vener para vender
+> En rutas tienda se conecto con los controladores de tienda
 
 
 
