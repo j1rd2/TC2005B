@@ -33,7 +33,12 @@ Labotario 12 y 13:
 > En rutas tienda se conecto con los controladores de tienda
 > Se agregaron las vistas y controladores de principal
 > Se respondio a la pregunta del laboratorio 12
-> Se creo la carpeta modelos y se creo el modelo de producto
+> Se creo la carpeta modelos y se creo el modelo "tiena" para un producto (deberia llamarse producto.model)
+> Se contestaron las preguntas del la 13
+
+Laboratorio 14:
+> 
+
 
 
 

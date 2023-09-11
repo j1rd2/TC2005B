@@ -10,8 +10,8 @@ router.get('/noticias', principalController.get_noticias);
 
 router.get('/noticias/tour', principalController.get_tour);
 
-router.get('noticias/vuelta', principalController.get_vuelta);
+router.get('/noticias/vuelta', principalController.get_vuelta);
 
-router.get('noticias/giro', principalController.get_giro);
+router.get('/noticias/giro', principalController.get_giro);
 
 module.exports = router;
