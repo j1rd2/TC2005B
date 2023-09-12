@@ -34,6 +34,12 @@ exports.post_vender = (request, response, next) => {
 };
 
 exports.get_tienda = (request, response, next) => {
-    response.render('tienda.ejs', {productos: Producto.fetchAll()}
+
+    const ultimo_acceso = new Date(request.get('Cookie').split('=')[1]);
+    console.log(ultimo_acceso.getTime());
+    const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
+    console.log(tiempo_transcurrido);
+
+    response.render('tienda.ejs', {productos: Producto.fetchAll() , tiempo_transcurrido: tiempo_transcurrido}
     );
 };

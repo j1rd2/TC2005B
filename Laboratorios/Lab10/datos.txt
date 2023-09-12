@@ -2,5 +2,5 @@
   "marca": "Specialized",
   "modelo": "Epic",
   "anio": "2023",
-  "descripcion": "Muy buena bici"
+  "descripcion": "asdasd"
 }

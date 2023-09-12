@@ -17,12 +17,25 @@ app.use(bodyParser.urlencoded({extended: false}));
 const fs = require('fs');
 
 // Middleware
-
 app.use((request, response, next) => {
-
     console.log('Middleware');
-    next() // Permite a la peticion avanzar al siguiente middleware
+
+    // Para acceder a la información de las cookies
+    const cookies = request.get('Cookie');
+    // String con toda la información de las cookies
+    console.log(cookies);
+    
+    // Comprueba si cookies está definido antes de intentar usar 'split' (Me lanzaba error por undefined)
+    if (cookies) {
+        console.log(cookies.split('=')[1]);
+    }
+    
+    // Para crear una nueva cookie
+    response.setHeader('Set-Cookie', 'ultimo_acceso=' + new Date() + '; HttpOnly');
+
+    next(); // Permite a la petición avanzar al siguiente middleware
 });
+
 
 const rutasPrincipal = require('./routes/principal.routes');
 app.use('/',rutasPrincipal);
