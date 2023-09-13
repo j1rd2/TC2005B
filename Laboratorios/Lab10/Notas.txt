@@ -57,7 +57,7 @@ Laboratorio 17:
 > Se movio la logiica del modelo al controlador
 > Se insertaron datos en la bd
 > Rutas parametrizadas con request params
->
+> Se agregaron hipervinculos en vistas de tienda para ver un solo producto
 
 
 
