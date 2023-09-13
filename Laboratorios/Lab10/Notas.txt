@@ -67,4 +67,5 @@ El usuario no necesita registrarse en pagina principal:
 /noticias/tour,giro,vuelta
 Pero si para vender y tienda
 > Se añadio el sql de usuarios
+> Se añadio modulo para registrar usuarios
 > 
