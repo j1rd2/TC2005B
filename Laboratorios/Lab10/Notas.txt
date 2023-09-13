@@ -69,3 +69,5 @@ Pero si para vender y tienda
 > Se añadio el sql de usuarios
 > Se añadio modulo para registrar usuarios
 >  Desplegar errores en las formas
+> Se instalo bcryptjs con el comando "npm install --save bcryptjs" y configuro en usuario model
+> Se cifro passwords

@@ -1,4 +1,4 @@
-const usuario = require("../models/usuario.model");
+const Usuario = require("../models/usuario.model");
 
 exports.get_login = (request, response, next) => {
     response.render('users/login.ejs', {
