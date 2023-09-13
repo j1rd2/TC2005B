@@ -56,6 +56,6 @@ Laboratorio 17:
 > Se movio la logica de modelo a controlador
 > Insertar resgistros en la bd
 > Ahora cuenta con rutas parametrizadas por id (es decir, si busca "/tienda/3" arrojara el producto 3)
->
+> Se agrego un hipervinculo en el nombre de un producto para mostrar solo ese
 
 
