@@ -68,4 +68,4 @@ El usuario no necesita registrarse en pagina principal:
 Pero si para vender y tienda
 > Se añadio el sql de usuarios
 > Se añadio modulo para registrar usuarios
-> 
+>  Desplegar errores en las formas

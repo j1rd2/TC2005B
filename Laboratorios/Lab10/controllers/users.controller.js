@@ -20,9 +20,17 @@ exports.get_logout = (request, response, next) => {
 };
 
 exports.get_add = (request, response, next) => {
+
+    let error = request.session.error || false;
+
+    if (error) {
+        request.session.error = false;
+    }
+
     response.render('users/add.ejs',{
         username: '',
         isLoggedIn: request.session.isLoggedIn || false,
+        error: error,
     });
 };
 
@@ -37,6 +45,7 @@ exports.post_add = (request, response, next) => {
             return response.redirect('/users/login');
         }).catch((error) => {
             console.log(error);
-            console.redirect('/users/login')
+            request.session.error = error;
+            response.redirect('/users/add');
         });
 };
