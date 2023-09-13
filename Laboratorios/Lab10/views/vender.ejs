@@ -9,6 +9,7 @@
             <header>
                 <nav class="bg-sky-900 p-4">
                     <div class="container mx-auto flex justify-between items-center">
+                        <% if (isLoggedIn == true)  { %>
                         <img class="justify-items-start w-20 h-20" src="logo.png"> 
                         <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
                         <ul class="flex space-x-4">
@@ -17,6 +18,7 @@
                             <li><a href="#" class="text-white">Services</a></li>
                             <li><a href="#" class="text-white">Contact</a></li>
                         </ul>
+                        <% } %>
                     </div>
                     <div>
                         <div class="container mx-auto flex justify-between items-center text-white">
@@ -52,7 +54,7 @@
                             <input id="anio" name="anio" class="input" type="text" placeholder="Año aqui">
                             <br><br>
                             <label for="descripcion"> Descripcion: </label>
-                            <textarea id=descripcion" name="descripcion" class="textarea resize" placeholder="Escribe una breve descripcion aqui"></textarea>
+                            <textarea id="descripcion" name="descripcion" class="textarea resize" placeholder="Escribe una breve descripcion aqui"></textarea>
                             <br><br>
                             <div class="text-center">
                                 <input class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto" id="registrar" name="registrar" type="submit" value="registrar">

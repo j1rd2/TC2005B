@@ -72,3 +72,4 @@ Pero si para vender y tienda
 > Se instalo bcryptjs con el comando "npm install --save bcryptjs" y configuro en usuario model
 > Se cifro passwords
 > Login con passwords cifrados
+> Se protegieron rutas
