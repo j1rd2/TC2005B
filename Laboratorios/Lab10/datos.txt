@@ -1,6 +1,6 @@
 {
-  "marca": "Santa Cruz",
-  "modelo": "tall boy",
+  "marca": "Orbea",
+  "modelo": "Alma",
   "anio": "2023",
-  "descripcion": "Para senderos de enduro"
+  "descripcion": "Una rigida de mtb con colores muy bonitos"
 }

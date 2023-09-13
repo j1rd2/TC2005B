@@ -54,5 +54,8 @@ exports.get_tienda = (request, response, next) => {
                 tiempo_transcurrido: tiempo_transcurrido,
                 username: request.session.username || '',
             });
-        })
-};
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        });
+}
