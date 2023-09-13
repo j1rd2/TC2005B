@@ -1,4 +1,4 @@
-let productos = []; // Arreglo de productos
+
 
 const db = require('../util/database');
 
@@ -21,5 +21,14 @@ module.exports = class Productos {
     static fetchAll(){
         return db.execute ('SELECT * FROM producto');
 
+    }
+
+    static fetch(id) {
+        if (id) {
+            return db.execute('SELECT * FROM producto WHERE idProducto = ?',
+            [idProducto]);
+        } else {
+            return this.fetchAll();
+        }
     }
 }
