@@ -16,7 +16,13 @@ exports.post_vender = (request, response, next) => {
         descripcion: request.body.descripcion
     });
 
-    producto.save();
+    producto.save()
+        .then(() => {
+            return response.redirect('/tienda');
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        });
 
     const texto = JSON.stringify(producto, null, 2);
 
@@ -28,8 +34,6 @@ exports.post_vender = (request, response, next) => {
         console.log('Datos guardados con éxito');
     }
     });
-
-    response.redirect('/tienda');
 };
 
 exports.get_tienda = (request, response, next) => {

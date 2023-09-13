@@ -13,7 +13,8 @@ module.exports = class Productos {
     // Metodo para guardarlo en el objeto
 
     save() {
-        productos.push(this);
+        return db.execute('INSERT INTO producto (marca, modelo, anio, descripcion) VALUES (?, ?, ?, ?)',
+        [this.marca, this.modelo, this.anio, this.descripcion]);
     }
 
     // Metodo para devolver los objetos del objeto
