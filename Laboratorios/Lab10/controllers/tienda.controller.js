@@ -39,6 +39,18 @@ exports.get_tienda = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
-    response.render('tienda.ejs', {productos: Producto.fetchAll() , tiempo_transcurrido: tiempo_transcurrido}
-    );
+    Producto.fetchAll()
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            console.log(fieldData)
+
+            return response.render('tienda.ejs', {
+                pelicuas: rows,
+                tiempo_transcurrido: tiempo_transcurrido,
+                username: request.session.username || '',
+            });
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        })
 };

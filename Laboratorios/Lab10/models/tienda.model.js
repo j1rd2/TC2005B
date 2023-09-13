@@ -18,13 +18,7 @@ module.exports = class Productos {
 
     // Metodo para devolver los objetos del objeto
     static fetchAll(){
-        return db.execute ('SELECT * FROM lovebikes')
-        .then (([rows, fieldData]) => {
-            console.log(rows);
-            console.log(fieldData);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+        return db.execute ('SELECT * FROM producto');
+
     }
 }

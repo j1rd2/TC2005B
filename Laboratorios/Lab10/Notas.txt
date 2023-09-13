@@ -54,7 +54,8 @@ Laboratorio 17:
 > Se instalo el paquete mysql2 para interactuas con MySQL con el comando "npm install --save mysql2"
 > Se creo carpeta util para librerias de apoyo y el archivo database.js para conectarnos a la base de datos
 > Se ejecuta una consulta el modelo y maneja los resultados de la promesa con then y catch
->
+> Se movio la logiica del modelo al controlador
+> 
 
 
 
