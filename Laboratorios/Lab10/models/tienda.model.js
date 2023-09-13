@@ -1,3 +1,5 @@
+const db = require('../util/database'); // Para conectar la base de datos
+
 let productos = []; // Arreglo de productos
 
 module.exports = class Productos {
@@ -16,6 +18,13 @@ module.exports = class Productos {
 
     // Metodo para devolver los objetos del objeto
     static fetchAll(){
-        return productos;
-    }
+        return db.execute('SELECT * FROM productos')
+        .then(([rows, fieldData]) =>{
+            console.log(rows);
+            console.log(fieldData);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    };
 }
