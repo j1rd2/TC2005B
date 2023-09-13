@@ -17,6 +17,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 // Para usar cookie parser 
 const cookieParser = require('cookie-parser');
 
+// Para usar express session
+const sessio = require('express-session');
+
+app.use(session({
+    secret: 'string secreto', // Guarda un string aleatorio
+    resave: false, // La session no se guardara en cada peticion, solo si algo cambia
+    saveUninitialized: false, // Asegura que no se guarde una sesion para una peticion que no lo necesita
+}));
+
+// Para usar fs
 const fs = require('fs');
 
 // Middleware

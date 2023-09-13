@@ -42,6 +42,8 @@ Laboratorio 14:
 NOTA: En app.js tenia un problema de "TypeError: Cannot read properties of undefined (reading 'split')" pero lo
 soluciones con un if.
 > Installe libreria cookie parser con "npm install --save cookie-parser" para obtener el valor de las cookies
+> Se instalo el paquete express session para manejar mejor las variables de sesion con "npm install --save express-session'
+>
 
 
 
