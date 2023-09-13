@@ -3,7 +3,10 @@ const fs = require('fs');
 const Producto = require('../models/tienda.model');
 
 exports.get_vender = (request, response, next) => {
-    response.render ('vender.ejs');
+    response.render ('vender.ejs', {
+        username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
+    });
 };
 
 exports.post_vender = (request, response, next) => {
@@ -21,11 +24,7 @@ exports.post_vender = (request, response, next) => {
             return response.redirect('/tienda');
         }).catch((error) => {
             console.log(error);
-<<<<<<< HEAD
-            response.redirect('/users/login');
-=======
             response.redirect('users/login');
->>>>>>> lab17
         });
 
     const texto = JSON.stringify(producto, null, 2);
@@ -38,10 +37,6 @@ exports.post_vender = (request, response, next) => {
         console.log('Datos guardados con éxito');
     }
     });
-<<<<<<< HEAD
-=======
-
->>>>>>> lab17
 };
 
 exports.get_tienda = (request, response, next) => {
@@ -51,15 +46,6 @@ exports.get_tienda = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
-<<<<<<< HEAD
-    Producto.fetchAll(request.params.id)
-        .then(([rows, fieldData]) => {
-            console.log(rows);
-            console.log(fieldData)
-
-            return response.render('tienda.ejs', {
-                pelicuas: rows,
-=======
     Producto.fetch(request.params.id)
         .then(([rows, fielData]) =>{
             console.log(rows);
@@ -67,17 +53,12 @@ exports.get_tienda = (request, response, next) => {
 
             return response.render('tienda.ejs', {
                 productos: rows,
->>>>>>> lab17
                 tiempo_transcurrido: tiempo_transcurrido,
                 username: request.session.username || '',
+                isLoggedIn: request.session.isLoggedIn || false,
             });
         }).catch((error) => {
             console.log(error);
             response.redirect('/users/login');
-<<<<<<< HEAD
-        })
-};
-=======
         });
 }
->>>>>>> lab17

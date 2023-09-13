@@ -51,25 +51,18 @@ soluciones con un if.
 
 Laboratorio 17:
 > Se agrego el sql de producto para la tienda 
-<<<<<<< HEAD
-> Se instalo el paquete mysql2 para interactuas con MySQL con el comando "npm install --save mysql2"
-> Se creo carpeta util para librerias de apoyo y el archivo database.js para conectarnos a la base de datos
-> Se ejecuta una consulta el modelo y maneja los resultados de la promesa con then y catch
-> Se movio la logiica del modelo al controlador
-> Se insertaron datos en la bd
-> Rutas parametrizadas con request params
-> Se agregaron hipervinculos en vistas de tienda para ver un solo producto
-
-
-
-
-=======
 > Se instalo y configuro el paquete mysql2 con el comando "npm install --save mysql2"
 > Ejecutar una consulta desde modelo y manejar resultados de la promesa then y catch
 > Se movio la logica de modelo a controlador
 > Insertar resgistros en la bd
 > Ahora cuenta con rutas parametrizadas por id (es decir, si busca "/tienda/3" arrojara el producto 3)
 > Se agrego un hipervinculo en el nombre de un producto para mostrar solo ese
->>>>>>> lab17
 
-
+Laboratorio 18:
+> Crear sesion de usuario y se modifico la navbar si no es un usuario
+> Crear sesion de usuario y se modifico la navbar
+El usuario no necesita registrarse en pagina principal:
+-/
+-/noticias
+/noticias/tour,giro,vuelta
+Pero si para vender y tienda

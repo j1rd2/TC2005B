@@ -7,45 +7,33 @@
         </head>
         <body>
             <header>
-                <nav class="bg-sky-900 p-4">
+                <nav class="bg-red-600 p-4">
                     <div class="container mx-auto flex justify-between items-center">
-                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
-                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
-                        <ul class="flex space-x-4">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
-                        </ul>
+                        
+                            <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                            <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                            <ul class="flex space-x-4">
+                                <li><a href="#" class="text-white">Noticias</a></li>
+                                <li><a href="#" class="text-white">Tienda</a></li>
+                                <li><a href="#" class="text-white">Taller</a></li>
+                                <li><a href="#" class="text-white">¿Quienes somos?</a></li>
+                            </ul>
+                    </div>
+                    <div>
+                        <div class="container mx-auto flex justify-between items-center text-white">
+                            <% (if isLoggedIn == false) { %>
+                            <a class="button" href="/users/add">
+                                <p> Refistrarse </p>
+                            </a>
+                            <a class="button" href="/users/login">
+                                <p>Iniciar sesion</p>
+                            </a>
+                            <% } else { %>
+                            <a class="button" href="/users/logout">
+                                Salir
+                            </a>
+                            <% } %>
+                        </div>
                     </div>
                 </nav>
             </header>
-            <main>
-                <h1 class="font-mono text-center text-4xl text-black"> Quiero vender mi bici </h1>
-                <br>
-                <div class="flex justify-center">
-                    <div>
-                        <form action="/tienda/vender" method="POST">
-                            <label for="marca">Marca: </label>
-                            <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
-                            <br><br>
-                            <label for="modelo">Modelo: </label>
-                            <input id="modelo" name="modelo" class="input" type="text" placeholder="Modelo">
-                            <br><br>
-                            <label for="anio">Año: </label>
-                            <input id="anio" name="anio" class="input" type="text" placeholder="Año aqui">
-                            <br><br>
-                            <label for="descripcion"> Descripcion: </label>
-                            <textarea id=descripcion" name="descripcion" class="textarea resize" placeholder="Escribe una breve descripcion aqui"></textarea>
-                            <br><br>
-                            <div class="text-center">
-                                <input class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto" id="registrar" name="registrar" type="submit" value="registrar">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </main>
-            <footer>
-            </footer>
-        </body>
-        </html>

@@ -18,6 +18,22 @@
                             <li><a href="#" class="text-white">Contact</a></li>
                         </ul>
                     </div>
+                    <div>
+                        <div class="container mx-auto flex justify-between items-center text-white">
+                            <% if (isLoggedIn == false) { %>
+                            <a class="button" href="/users/add">
+                                <p> Refistrarse </p>
+                            </a>
+                            <a class="button" href="/users/login">
+                                <p>Iniciar sesion</p>
+                            </a>
+                            <% } else { %>
+                            <a class="button" href="/users/logout">
+                                Salir
+                            </a>
+                            <% } %>
+                        </div>
+                    </div>
                 </nav>
             </header>
             <main>
