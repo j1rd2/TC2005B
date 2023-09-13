@@ -1,6 +1,6 @@
 {
-  "marca": "Specialized",
+  "marca": "Hola",
   "modelo": "Epic",
-  "anio": "2023",
-  "descripcion": "Hola"
+  "anio": "Hola",
+  "descripcion": "H ola"
 }

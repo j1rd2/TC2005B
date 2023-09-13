@@ -53,7 +53,7 @@ Laboratorio 17:
 > Se agrego el sql de producto para la tienda 
 > Se instalo y configuro el paquete mysql2 con el comando "npm install --save mysql2"
 > Ejecutar una consulta desde modelo y manejar resultados de la promesa then y catch
-
+> Se movio la logica de modelo a controlador
 
 
 
