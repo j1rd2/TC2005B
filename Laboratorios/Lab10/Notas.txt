@@ -51,6 +51,10 @@ soluciones con un if.
 
 Laboratorio 17:
 > Se agrego el sql de producto para la tienda 
+> Se instalo el paquete mysql2 para interactuas con MySQL con el comando "npm install --save mysql2"
+> Se creo carpeta util para librerias de apoyo y el archivo database.js para conectarnos a la base de datos
+> 
+
 
 
 
