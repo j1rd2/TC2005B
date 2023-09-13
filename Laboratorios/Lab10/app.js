@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 const cookieParser = require('cookie-parser');
 
 // Para usar express session
-const sessio = require('express-session');
+const session = require('express-session');
 
 app.use(session({
     secret: 'string secreto', // Guarda un string aleatorio
@@ -33,16 +33,6 @@ const fs = require('fs');
 app.use((request, response, next) => {
     console.log('Middleware');
 
-    // Para acceder a la información de las cookies
-    const cookies = request.get('Cookie');
-    // String con toda la información de las cookies
-    console.log(cookies);
-    
-    // Comprueba si cookies está definido antes de intentar usar 'split' (Me lanzaba error por undefined)
-
-        console.log(cookies, request.cookies);
-    
-    
     // Para crear una nueva cookie
     response.setHeader('Set-Cookie', 'ultimo_acceso=' + new Date() + '; HttpOnly');
 
@@ -55,6 +45,11 @@ app.use('/',rutasPrincipal);
 
 const rutasTienda = require ('./routes/tienda.routes');
 app.use('/', rutasTienda);
+
+const rutasUsuarios = require('./routes/users.routes');
+app.use('/', rutasUsuarios);
+
+app.use('/users', rutasUsuarios);
 
 app.use((request, response, next) => {
     response.statusCode = 404;
