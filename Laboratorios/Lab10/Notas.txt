@@ -50,7 +50,7 @@ soluciones con un if.
 > Ahora se puede destruir la sesion
 
 Laboratorio 17:
-> 
+> Se agrego el sql de producto para la tienda 
 
 
 
