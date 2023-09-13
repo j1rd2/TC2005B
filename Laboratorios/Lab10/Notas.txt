@@ -41,6 +41,7 @@ Laboratorio 14:
 > En tienda controllers y tienda ejs, se obtiene por medio de cookies el tiempoo trascurrido entre la ultima interaccion y el sitio
 NOTA: En app.js tenia un problema de "TypeError: Cannot read properties of undefined (reading 'split')" pero lo
 soluciones con un if.
+> Installe libreria cookie parser con "npm install --save cookie-parser" para obtener el valor de las cookies
 
 
 

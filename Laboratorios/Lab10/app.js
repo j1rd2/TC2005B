@@ -14,6 +14,9 @@ app.use(express.static(path.join(__dirname, 'public'))); // Middleware para los 
 const bodyParser = require ('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+// Para usar cookie parser 
+const cookieParser = require('cookie-parser');
+
 const fs = require('fs');
 
 // Middleware
@@ -26,9 +29,9 @@ app.use((request, response, next) => {
     console.log(cookies);
     
     // Comprueba si cookies está definido antes de intentar usar 'split' (Me lanzaba error por undefined)
-    if (cookies) {
-        console.log(cookies.split('=')[1]);
-    }
+
+        console.log(cookies, request.cookies);
+    
     
     // Para crear una nueva cookie
     response.setHeader('Set-Cookie', 'ultimo_acceso=' + new Date() + '; HttpOnly');
