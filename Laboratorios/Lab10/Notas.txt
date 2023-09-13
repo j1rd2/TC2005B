@@ -49,6 +49,9 @@ soluciones con un if.
 > Se creo el arhivo users.controller para los controladores de users
 > Ahora se puede destruir la sesion
 
+Laboratorio 17:
+> 
+
 
 
 

@@ -1,7 +1,6 @@
 const fs = require('fs');
 
 const Producto = require('../models/tienda.model');
-const modelo = require('../models/tienda.model');
 
 exports.get_vender = (request, response, next) => {
     response.render ('vender.ejs');
