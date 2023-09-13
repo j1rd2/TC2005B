@@ -13,18 +13,13 @@ module.exports = class Productos {
     // Metodo para guardarlo en el objeto
 
     save() {
-        productos.push(this);
+        return db.execute(
+            'INSERT INTO productos(marca, modelo, anio, descripcion) VALUES (? ,?, ?, ?)',
+            [this.marca, this.modelo, this.anio, this.descripcion]);
     }
 
     // Metodo para devolver los objetos del objeto
     static fetchAll(){
-        return db.execute('SELECT * FROM productos')
-        .then(([rows, fieldData]) =>{
-            console.log(rows);
-            console.log(fieldData);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-    };
+        return db.execute('SELECT * FROM productos');
+    }
 }

@@ -16,7 +16,13 @@ exports.post_vender = (request, response, next) => {
         descripcion: request.body.descripcion
     });
 
-    producto.save();
+    producto.save()
+        .then(() => {
+            return response.redirect('/tienda');
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('users/login');
+        });
 
     const texto = JSON.stringify(producto, null, 2);
 
@@ -29,7 +35,6 @@ exports.post_vender = (request, response, next) => {
     }
     });
 
-    response.redirect('/tienda');
 };
 
 exports.get_tienda = (request, response, next) => {
@@ -39,6 +44,15 @@ exports.get_tienda = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
-    response.render('tienda.ejs', {productos: Producto.fetchAll() , tiempo_transcurrido: tiempo_transcurrido}
-    );
+    Producto.fetchAll()
+        .then(([rows, fielData]) =>{
+            console.log(rows);
+            console.log(fielData);
+
+            return response.render('tienda.ejs', {
+                productos: rows,
+                tiempo_transcurrido: tiempo_transcurrido,
+                username: request.session.username || '',
+            });
+        })
 };

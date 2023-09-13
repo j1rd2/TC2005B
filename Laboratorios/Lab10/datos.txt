@@ -1,6 +1,6 @@
 {
-  "marca": "Hola",
-  "modelo": "Epic",
-  "anio": "Hola",
-  "descripcion": "H ola"
+  "marca": "Santa Cruz",
+  "modelo": "tall boy",
+  "anio": "2023",
+  "descripcion": "Para senderos de enduro"
 }
