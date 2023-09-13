@@ -1,5 +1,7 @@
 const Usuario = require("../models/usuario.model");
 
+const bcrypt = require('bcryptjs');
+
 exports.get_login = (request, response, next) => {
     response.render('users/login.ejs', {
         username: '',
@@ -8,9 +10,32 @@ exports.get_login = (request, response, next) => {
 };
 
 exports.post_login = (request, response, next) => {
-    request.session.username = request.body.username;
-    request.session.isLoggedIn = true;
-    response.redirect('/');
+    Usuario.fetchOne(request.body.username)
+        .then(([users, fieldData]) => {
+            // Obtiene primer valor de consulta (La consulta solo devuelve maximo un elemento)
+            const user = users[0];
+            
+            if (users.length > 0) {
+                bcrypt.compare(request.body.password, user.password)
+                .then(doMatch => {
+                    if (doMatch) {
+                        request.session.isLoggedIn = true;
+                        request.session.user = user;
+                        return request.session.save(err => {
+                            response.redirect('/');
+                        });
+                    }
+                    response.redirect('users/login');
+                }).catch(error => {
+                    console.log(error);
+                    response.redirect('/users/login');
+                });
+            } else {
+                response.redirect('/users/login');
+            }
+        }).catch((error) => {
+            console.log(error);
+        });
 };
 
 exports.get_logout = (request, response, next) => {
