@@ -22,4 +22,13 @@ module.exports = class Productos {
     static fetchAll(){
         return db.execute('SELECT * FROM productos');
     }
+
+    static fetch(id) {
+        if (id) {
+            return db.execute('SELECT * FROM productos WHERE id = ?',
+            [id]);
+        } else {
+            return this.fetchAll();
+        }
+    }
 }

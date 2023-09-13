@@ -44,7 +44,7 @@ exports.get_tienda = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
-    Producto.fetchAll()
+    Producto.fetch(request.params.id)
         .then(([rows, fielData]) =>{
             console.log(rows);
             console.log(fielData);

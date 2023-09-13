@@ -55,6 +55,7 @@ Laboratorio 17:
 > Ejecutar una consulta desde modelo y manejar resultados de la promesa then y catch
 > Se movio la logica de modelo a controlador
 > Insertar resgistros en la bd
-
+> Ahora cuenta con rutas parametrizadas por id (es decir, si busca "/tienda/3" arrojara el producto 3)
+>
 
 
