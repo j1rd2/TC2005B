@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 13, 2023 at 07:34 AM
+-- Generation Time: Sep 13, 2023 at 06:11 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,15 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `producto`
+-- Table structure for table `productos`
 --
 
-CREATE TABLE `producto` (
-  `idProducto` int(11) NOT NULL,
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
   `marca` varchar(300) NOT NULL,
   `modelo` varchar(300) NOT NULL,
   `anio` int(4) NOT NULL,
-  `createdAt` int(11) NOT NULL DEFAULT current_timestamp()
+  `descripcion` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -40,20 +40,20 @@ CREATE TABLE `producto` (
 --
 
 --
--- Indexes for table `producto`
+-- Indexes for table `productos`
 --
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`idProducto`);
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `producto`
+-- AUTO_INCREMENT for table `productos`
 --
-ALTER TABLE `producto`
-  MODIFY `idProducto` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
