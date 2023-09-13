@@ -1,6 +1,7 @@
 
-
 const db = require('../util/database');
+
+let productos = [];
 
 module.exports = class Productos {
     constructor(nuevoProducto) { // Constructor para construir el objeto y en que prioridad
@@ -13,19 +14,19 @@ module.exports = class Productos {
     // Metodo para guardarlo en el objeto
 
     save() {
-        return db.execute('INSERT INTO producto (marca, modelo, anio, descripcion) VALUES (?, ?, ?, ?)',
+        return db.execute('INSERT INTO productos(marca, modelo, anio, descripcion) VALUES (?, ?, ?, ?)',
         [this.marca, this.modelo, this.anio, this.descripcion]);
     }
 
     // Metodo para devolver los objetos del objeto
     static fetchAll(){
-        return db.execute ('SELECT * FROM producto');
+        return db.execute ('SELECT * FROM productos');
 
     }
 
-    static fetch(id) {
-        if (id) {
-            return db.execute('SELECT * FROM producto WHERE idProducto = ?',
+    static fetch(idProducto) {
+        if (idProducto) {
+            return db.execute('SELECT * FROM productos WHERE idProducto = ?',
             [idProducto]);
         } else {
             return this.fetchAll();
