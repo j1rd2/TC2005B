@@ -30,7 +30,9 @@
                             <p><a href="/productos/<%= producto.id %>"><%=producto.nombre%> </a></p>
                         </div>
                         <br>
-                        <div class="px-6 py-4"><%= producto.modelo %></div>
+                        <div class="px-6 py-4">
+                            <a href="/tienda/<%= producto.id %>"><%=producto.modelo%> </a>
+                        </div>
                         <br>
                         <div class="px-6 py-4"><%= producto.anio %></div>
                         <br>

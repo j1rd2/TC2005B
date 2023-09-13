@@ -21,7 +21,11 @@ exports.post_vender = (request, response, next) => {
             return response.redirect('/tienda');
         }).catch((error) => {
             console.log(error);
+<<<<<<< HEAD
             response.redirect('/users/login');
+=======
+            response.redirect('users/login');
+>>>>>>> lab17
         });
 
     const texto = JSON.stringify(producto, null, 2);
@@ -34,6 +38,10 @@ exports.post_vender = (request, response, next) => {
         console.log('Datos guardados con éxito');
     }
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> lab17
 };
 
 exports.get_tienda = (request, response, next) => {
@@ -43,6 +51,7 @@ exports.get_tienda = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
+<<<<<<< HEAD
     Producto.fetchAll(request.params.id)
         .then(([rows, fieldData]) => {
             console.log(rows);
@@ -50,11 +59,25 @@ exports.get_tienda = (request, response, next) => {
 
             return response.render('tienda.ejs', {
                 pelicuas: rows,
+=======
+    Producto.fetch(request.params.id)
+        .then(([rows, fielData]) =>{
+            console.log(rows);
+            console.log(fielData);
+
+            return response.render('tienda.ejs', {
+                productos: rows,
+>>>>>>> lab17
                 tiempo_transcurrido: tiempo_transcurrido,
                 username: request.session.username || '',
             });
         }).catch((error) => {
             console.log(error);
             response.redirect('/users/login');
+<<<<<<< HEAD
         })
 };
+=======
+        });
+}
+>>>>>>> lab17
