@@ -1,0 +1,88 @@
+> Los materiales (clave y descripción) entregados al proyecto "México sin ti no estamos completos".
+
+SELECT m.clave, m.descripcion
+FROM materiales m
+JOIN entregan e ON m.clave = e.clave
+JOIN proyectos p ON e.id_proyecto = p.id_proyecto
+WHERE p.nombre_proyecto = 'México sin ti no estamos completos';
+
+> Los materiales (clave y descripción) que han sido proporcionados por el proveedor "Acme tools"
+
+SELECT m.clave, m.descripcion
+FROM materiales m
+JOIN suministros s ON m.clave = s.clave_material
+JOIN proveedores p ON s.id_proveedor = p.id_proveedor
+WHERE p.nombre_proveedor = 'Acme Tools';
+
+> El RFC de los proveedores que durante el 2000 entregaron en promedio cuando menos 300 materiales.
+
+SELECT p.RFC
+FROM proveedores p
+JOIN entregas e ON p.id_proveedor = e.id_proveedor
+WHERE YEAR(e.fecha_entrega) = 2000
+GROUP BY p.RFC
+HAVING AVG(e.cantidad) >= 300;
+
+> El Total entregado por cada material en el año 2000.
+
+SELECT p.RFC
+FROM proveedores p
+JOIN entregas e ON p.id_proveedor = e.id_proveedor
+WHERE YEAR(e.fecha_entrega) = 2000
+GROUP BY p.RFC
+HAVING AVG(e.cantidad) >= 300;
+
+> La Clave del material más vendido durante el 2001. (se recomienda usar una vista intermedia para su solución)
+
+CREATE OR REPLACE VIEW ventas_2001 
+SELECT clave_material, SUM(cantidad) total_vendido
+FROM ventas
+WHERE YEAR(fecha_venta) = 2001
+GROUP BY clave_material;
+
+SELECT clave_material
+FROM ventas_2001
+ORDER BY total_vendido DESC
+LIMIT 1;
+
+> Productos que contienen el patrón 'ub' en su nombre.
+
+SELECT * 
+FROM productos
+WHERE nombre LIKE '%ub%';
+
+> Denominación y suma del total a pagar para todos los proyectos
+
+SELECT denominacion, SUM(total_a_pagar) 
+FROM proyectos
+GROUP BY denominacion;
+
+> Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila (Solo usando vistas).
+
+
+> Denominación, RFC y RazonSocial de los proveedores que se suministran materiales al proyecto Televisa en acción que no se encuentran apoyando al proyecto Educando en Coahuila (Sin usar vistas, utiliza not in, in o exists).
+SELECT DISTINCT p.denominacion, p.RFC, p.RazonSocial
+FROM proveedores p
+JOIN suministros s ON p.id = s.id_proveedor
+JOIN proyectos pr ON s.id_proyecto = pr.id
+WHERE pr.nombre = 'Televisa en acción'
+AND p.RFC NOT IN (
+    SELECT p2.RFC
+    FROM proveedores p2
+    JOIN suministros s2 ON p2.id = s2.id_proveedor
+    JOIN proyectos pr2 ON s2.id_proyecto = pr2.id
+    WHERE pr2.nombre = 'Educando en Coahuila'
+);
+
+> Costo de los materiales y los Materiales que son entregados al proyecto Televisa en acción cuyos proveedores también suministran materiales al proyecto Educando en Coahuila.
+SELECT m.nombre_material, m.costo
+FROM materiales m
+JOIN suministros s ON m.id_material = s.id_material
+JOIN proyectos pr ON s.id_proyecto = pr.id
+WHERE pr.nombre = 'Televisa en acción'
+AND s.id_proveedor IN (
+    SELECT s2.id_proveedor
+    FROM suministros s2
+    JOIN proyectos pr2 ON s2.id_proyecto = pr2.id
+    WHERE pr2.nombre = 'Educando en Coahuila'
+);
