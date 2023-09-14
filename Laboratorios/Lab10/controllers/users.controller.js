@@ -25,7 +25,7 @@ exports.post_login = (request, response, next) => {
                             response.redirect('/');
                         });
                     }
-                    response.redirect('users/login');
+                    response.redirect('/users/login');
                 }).catch(error => {
                     console.log(error);
                     response.redirect('/users/login');

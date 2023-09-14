@@ -28,7 +28,6 @@ app.use(session({
 
 // Para usar fs
 const fs = require('fs');
-
 // Para usar csrf
 const csrf = require('csurf');
 const csrfProtection = csrf();
@@ -37,7 +36,7 @@ app.use(csrfProtection);
 app.use((requst, response, next) =>{
     response.locals.csrfToken = requst.csrfToken();
     next();
-})
+});
 
 // Middleware
 app.use((request, response, next) => {

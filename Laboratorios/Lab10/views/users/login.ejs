@@ -20,13 +20,13 @@
         <h1 class="font-mono text-center text-4xl text-black">Inicia sesion</h1>
         <div class="flex justify-center">
             <div>
-                <form action="/tienda/vender" method="POST">
+                <form action="/users/login" method="POST">
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                     <label for="username">Username </label>
                     <input id="username" name="username" class="input" type="text" placeholder="username">
                     <br><br>
                     <label for="password">Password </label>
-                    <input id="password" name="password" class="password" type="text" placeholder="password">
+                    <input id="password" name="password" class="password" type="password" placeholder="password">
                     <br><br>
                     <div class="text-center">
                         <input class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto" id="registrar" name="registrar" type="submit" value="registrar">
