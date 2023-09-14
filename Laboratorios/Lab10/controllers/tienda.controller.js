@@ -57,6 +57,7 @@ exports.get_tienda = (request, response, next) => {
                 tiempo_transcurrido: tiempo_transcurrido,
                 username: request.session.username || '',
                 isLoggedIn: request.session.isLoggedIn || false,
+                privilegios: request.session.privilegios || [],
             });
         }).catch((error) => {
             console.log(error);

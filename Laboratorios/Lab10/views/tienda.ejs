@@ -13,10 +13,13 @@
                         <img class="justify-items-start w-20 h-20" src="logo.png"> 
                         <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
                         <ul class="flex space-x-4">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
+                            <li><a href="#" class="text-white">Noticias</a></li>
+                            <% for (let permiso of privilegios) { %>
+                                <% if (permiso.nombre == 'vender') %>
+                            <li><a href="/tienda/vender" class="text-white">Vender</a></li>
+                            <% } %>
+                            <li><a href="#" class="text-white">Taller</a></li>
+                            <li><a href="#" class="text-white">¿Quienes somos?</a></li>
                         </ul>
                         <% } %>
                     </div>

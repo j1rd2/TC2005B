@@ -97,17 +97,32 @@ app.use((request, response, next) => {
 });
 
 console.log('Describe el archivo package JSON: Un archvio que mantiene la configuracion de los proyectos de NodeJs. Incluye dependencias, metadatos, scripts, etc...');
-
 console.log('¿Que otros templating engines existen para node: Existen varios que se adaptan a diferentes necesidades o prioridades como pug que tiene una sintaxis muy limpia, handlebars que es muy facil de aprender o mustache que es extremadamente facil de aprender y compatible con otros lenguajes');
 
-console.log('Beneficios MVC: Considero que tienes un proyecto mas limpio y organizado y a la larga es mas facil de mantener. Igual como es facil reutilizar codigo y separarlo por su proposito');
+console.log('-----------------------------------------');
 
+console.log('Beneficios MVC: Considero que tienes un proyecto mas limpio y organizado y a la larga es mas facil de mantener. Igual como es facil reutilizar codigo y separarlo por su proposito');
 console.log('Desventajas MVC: Considero tiene una curva de aprendizaje mas larga y complejidad mayor. Igual mantener que los datos se sincronicen es complicado.')
 
-console.log('¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?: Las principales ventajas considero que son mantener un codigo mas limpio, oraganizado y con mejor mantenibilidad');
+console.log('-----------------------------------------');
 
+console.log('¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?: Las principales ventajas considero que son mantener un codigo mas limpio, oraganizado y con mejor mantenibilidad');
 console.log('¿Qué es SQL injection y cómo se puede prevenir?: Un tipo de ataque que aprovecha una vulnerabilidad en el codigo y permite ingresar codigo SQL dando instruccionmes. Puede eliminar tablas, bases de datos, cambiar datos, etc... Hay varias formas pero lo comun es con las propias librerias como mysql2');
 
+console.log('-----------------------------------------');
+
 console.log('¿Qué otras formas de autentificación existen?: Existen muchos tipos de autentificacion, con ventajas, desvemtajas y se adaptan a diferentes necesidades, como Autentificacion 2 o 3 factores, Single Sign-On, OAuth, Certificados de Cliente SSL, Biometria, entre otros,');
+console.log('¿En qué consiste el control de acceso basado en roles?: En un sistema para controlar los atributos o privilegios de un usuario de acuerdo a una jerarquia o diferentes necesidades');
+
+console.log('-----------------------------------------');
+
+console.log('Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.');
+console.log(' Sistema con RBAC (Control de Acceso Basado en Roles) - Amazon Web Services (AWS) Identity and Access Management (IAM)');
+console.log('Ventajas: flexibilidad, facil de trazar, nivel detallado de permisos');
+console.log('Desventajas: es de pago, tiene un grado de compleidad');
+console.log('Sistema sin RBAC - Sistema de Archivos de Linux para Usuarios Individuales');
+console.log('Ventajas: transparencia y facil de implementar');
+console.log('Desventajas: Tiene riesgos de seguridad');
+console.log('-----------------------------------------');
 
 app.listen(3000);

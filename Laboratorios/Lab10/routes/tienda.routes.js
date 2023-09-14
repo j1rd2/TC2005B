@@ -6,11 +6,14 @@ const tiendaController = require('../controllers/tienda.controller'); // Para co
 
 const isAuth = require('../util/is-auth');
 
-router.get('/tienda/vender',isAuth, tiendaController.get_vender);
-router.post('/tienda/vender',isAuth, tiendaController.post_vender);
-router.get('/tienda',isAuth, tiendaController.get_tienda);
-router.get('/tienda/:id',isAuth, tiendaController.get_tienda);
-router.get('/:id',isAuth, tiendaController.get_tienda);
+const canVender = require('../util/can-vender');
+const canVerTienda = require('../util/can-ver-tienda');
+
+router.get('/tienda/vender',isAuth, canVender, tiendaController.get_vender);
+router.post('/tienda/vender',isAuth, canVender, tiendaController.post_vender);
+router.get('/tienda',isAuth, canVerTienda, tiendaController.get_tienda);
+router.get('/tienda/:id',isAuth, canVerTienda, tiendaController.get_tienda);
+router.get('/:id',isAuth, canVerTienda, tiendaController.get_tienda);
 
 
 module.exports = router;

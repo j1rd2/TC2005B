@@ -1,57 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Laboratorio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <header>
-        <nav class="bg-red-600 p-4">
-            <div class="container mx-auto flex justify-between items-center">
-                <img class="justify-items-start w-20 h-20" src="logo.png"> 
-                <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
-                <ul class="flex space-x-4">
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <h1 class="font-mono text-center text-4xl text-black">Registrate</h1>
-        <% if(error) { %>
-            <div>
-                <div>
-                    <p>Falla</p>
-                    <button class="delete"> delete </button>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Laboratorio</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body>
+            <header>
+                <nav class="bg-sky-900 p-4">
+                    <div class="container mx-auto flex justify-between items-center">
+                        <% if (isLoggedIn == true)  { %>
+                        <img class="justify-items-start w-20 h-20" src="logo.png"> 
+                        <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="text-white">Home</a></li>
+                            <li><a href="#" class="text-white">About</a></li>
+                            <li><a href="#" class="text-white">Services</a></li>
+                            <li><a href="#" class="text-white">Contact</a></li>
+                        </ul>
+                        <% } %>
+                    </div>
+                    <div>
+                        <div class="container mx-auto flex justify-between items-center text-white">
+                            <% if (isLoggedIn == false) { %>
+                            <a class="button" href="/users/add">
+                                <p> Refistrarse </p>
+                            </a>
+                            <a class="button" href="/users/login">
+                                <p>Iniciar sesion</p>
+                            </a>
+                            <% } else { %>
+                            <a class="button" href="/users/logout">
+                                Salir
+                            </a>
+                            <% } %>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
+                <div class="grid grid-cols-4 justify-items-center gap-4"> 
+            <% if (productos.length > 0) { %>
+                <% for (let producto of productos) { %>
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <div class="px-6 py-4"><%= producto.marca %>
+                            <p><a href="/productos/<%= producto.id %>"><%=producto.nombre%> </a></p>
+                        </div>
+                        <br>
+                        <div class="px-6 py-4">
+                            <a href="/tienda/<%= producto.id %>"><%=producto.modelo%> </a>
+                        </div>
+                        <br>
+                        <div class="px-6 py-4"><%= producto.anio %></div>
+                        <br>
+                        <div class="px-6 py-4">
+                            <%= producto.descripcion %>
+                        </div>
+                        <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto">Comprar</button>
+                    </div>
+                 <% } %>
+             <% } else { %>
+                    <h1> No hay productos registrados </h1>
+             <% } %>
                 </div>
-                <div>
-                    <p><%= error.sqlMessage %></p>
-                </div>
-            </div>
-            <% } %>
-        <div class="bg-yellow-400 h-screen overflow-hidden flex items-center justify-center">
-            <div class="bg-white lg:w-6/12 md:7/12 w-8/12 shadow-3xl">
-                <div class="bg-gray-800 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full p-4 md:p-8">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFF">
-                    <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
-                </svg>
-            </div>
-            <form action="/users/login" method="POST" class="p-12 md:p-24">
-                <div class="flex items-center text-lg mb-6 md:mb-8">
-                    <input type="text" id="nombre" name="nombre" class="bg-gray-200 pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Nombre" />
-                </div>
-                <div class="flex items-center text-lg mb-6 md:mb-8">
-                    <input type="text" id="username" name="username" class="bg-gray-200 pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Username" />
-                </div>
-                <div class="flex items-center text-lg mb-6 md:mb-8">
-                    <input type="password" id="password" name="password" class="bg-gray-200 pl-12 py-2 md:py-4 focus:outline-none w-full" placeholder="Password" />
-                </div>
-                <input type="submit" class="bg-gradient-to-b from-gray-700 to-gray-900 font-medium p-2 md:p-4 text-white uppercase w-full" value="Registrarse">
-            </form>
-            </div>
-        </div>
-    </main>
-    <footer>
-    </footer>
-</body>
-</html>
+            </main>
+Tiempo desde el ultimo acceso: <%= tiempo_transcurrido %> segundos.
+            <footer>
+            </footer>
+        </body>
+        </html>

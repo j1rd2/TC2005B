@@ -1,6 +1,8 @@
 
 exports.get_main = (request, response, next) => {
-    response.render('main.ejs');
+    response.render('main.ejs', {
+        privilegios: request.session.privilegios || [],
+    });
 };
 
 exports.get_noticias = (request, response, next) => {

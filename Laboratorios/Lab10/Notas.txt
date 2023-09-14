@@ -78,4 +78,11 @@ Pero si para vender y tienda
 Laboratorio 19:
 > Se acutalizo la base de datos
 > Obtener permisos de usuario
->
+> RBAC Completo
+Prueba:
+administrador -> puede vender y ver tienda:
+usuario: hola
+password: hola
+usuario -> Solo puede ver tienda
+usuario: hola1
+password: hola1

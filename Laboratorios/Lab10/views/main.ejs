@@ -13,7 +13,13 @@
                         <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
                         <ul class="flex space-x-4">
                             <li><a href="#" class="text-white">Noticias</a></li>
-                            <li><a href="#" class="text-white">Tienda</a></li>
+                            <% for (let permiso of privilegios) { %>
+                                <% if (permiso.nombre == 'tienda_ver') { %>
+                                    <li><a href="/tienda" class="text-white">Tienda</a></li>
+                                <% } else { %>
+                                    <li><a href="/" class="text-white">Tienda</a></li> 
+                                <% } %>  
+                            <% } %>
                             <li><a href="#" class="text-white">Taller</a></li>
                             <li><a href="#" class="text-white">¿Quienes somos?</a></li>
                         </ul>

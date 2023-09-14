@@ -1,10 +1,6 @@
 {
-  "marca": "Orbea",
-  "modelo": "Alma",
+  "marca": "Canyon",
+  "modelo": "Lux",
   "anio": "2023",
-<<<<<<< HEAD
-  "descripcion": "Hola"
-=======
-  "descripcion": "Una rigida de mtb con colores muy bonitos"
->>>>>>> lab17
+  "descripcion": "Hermoso diseno en carbono"
 }
