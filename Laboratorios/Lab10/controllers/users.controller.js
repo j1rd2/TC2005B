@@ -21,11 +21,15 @@ exports.post_login = (request, response, next) => {
                     if (doMatch) {
                         request.session.isLoggedIn = true;
                         request.session.user = user;
-                        return request.session.save(err => {
-                            response.redirect('/');
-                        });
+                        Usuario.getPrivilegios(user.id)
+                            .then(([privilegios, fieldData]) => {
+                                request.session.privilegios = privilegios;
+                                response.redirect('/');
+                            }).catch(error => {
+                                console.error(error);
+                                response.redirect('/users/login');
+                            });
                     }
-                    response.redirect('/users/login');
                 }).catch(error => {
                     console.log(error);
                     response.redirect('/users/login');
