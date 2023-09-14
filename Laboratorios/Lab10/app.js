@@ -104,4 +104,10 @@ console.log('Beneficios MVC: Considero que tienes un proyecto mas limpio y organ
 
 console.log('Desventajas MVC: Considero tiene una curva de aprendizaje mas larga y complejidad mayor. Igual mantener que los datos se sincronicen es complicado.')
 
+console.log('¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?: Las principales ventajas considero que son mantener un codigo mas limpio, oraganizado y con mejor mantenibilidad');
+
+console.log('¿Qué es SQL injection y cómo se puede prevenir?: Un tipo de ataque que aprovecha una vulnerabilidad en el codigo y permite ingresar codigo SQL dando instruccionmes. Puede eliminar tablas, bases de datos, cambiar datos, etc... Hay varias formas pero lo comun es con las propias librerias como mysql2');
+
+console.log('¿Qué otras formas de autentificación existen?: Existen muchos tipos de autentificacion, con ventajas, desvemtajas y se adaptan a diferentes necesidades, como Autentificacion 2 o 3 factores, Single Sign-On, OAuth, Certificados de Cliente SSL, Biometria, entre otros,');
+
 app.listen(3000);
