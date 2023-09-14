@@ -73,3 +73,4 @@ Pero si para vender y tienda
 > Se cifro passwords
 > Login con passwords cifrados
 > Se protegieron rutas
+> Proteccion contra csrf

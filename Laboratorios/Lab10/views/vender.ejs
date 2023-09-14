@@ -44,6 +44,7 @@
                 <div class="flex justify-center">
                     <div>
                         <form action="/tienda/vender" method="POST">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                             <label for="marca">Marca: </label>
                             <input id="marca" name="marca" class="input" type="text" placeholder="Marca">
                             <br><br>
