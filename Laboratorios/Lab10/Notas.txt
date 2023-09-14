@@ -74,3 +74,6 @@ Pero si para vender y tienda
 > Login con passwords cifrados
 > Se protegieron rutas
 > Proteccion contra csrf
+
+Laboratorio 19:
+> Se acutalizo la base de datos
