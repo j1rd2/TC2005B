@@ -14,6 +14,26 @@ app.use(express.static(path.join(__dirname, 'public'))); // Middleware para los 
 const bodyParser = require ('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+// Configurar multer
+
+const multer = require('multer');
+
+// fileStorage es nuestra constante para manejar el almacenamiento
+const fileStorage = multer.diskStorage({
+    destination: (request, file, callback) => {
+        // 'uploads': Directorio donde se almacenaran los archivos
+        callback(null, 'public/uploads')
+    },
+    filename: (request, file, callback) => {
+        // Se configura el nombre que tenga el archivo
+        callback(null, new Date().getMilliseconds + file.originalname);
+    },
+});
+
+// Pasamos la constante de configuracion y se usa single por que es 1 solo archivo
+app.use(multer({storage: fileStorage}).single('imagen'));
+
+
 // Para usar cookie parser 
 const cookieParser = require('cookie-parser');
 
