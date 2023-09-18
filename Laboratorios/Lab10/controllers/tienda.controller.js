@@ -17,7 +17,8 @@ exports.post_vender = (request, response, next) => {
         marca: request.body.marca,
         modelo: request.body.modelo,
         anio: request.body.anio,
-        descripcion: request.body.descripcion
+        descripcion: request.body.descripcion,
+        imagen: request.body.imagen,
     });
 
     producto.save()

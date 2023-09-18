@@ -9,6 +9,7 @@ module.exports = class Productos {
         this.modelo = nuevoProducto.modelo;
         this.anio = nuevoProducto.anio;
         this.descripcion = nuevoProducto.descripcion;
+        this.imagen = nuevoProducto.imagen;
     }
 
     // Metodo para guardarlo en el objeto

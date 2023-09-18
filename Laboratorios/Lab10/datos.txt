@@ -1,6 +1,6 @@
 {
-  "marca": "Canyon",
-  "modelo": "Lux",
+  "marca": "Specialized",
+  "modelo": "Epic",
   "anio": "2023",
-  "descripcion": "Hermoso diseno en carbono"
+  "descripcion": "La mejor"
 }
