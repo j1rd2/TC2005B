@@ -26,7 +26,7 @@ const fileStorage = multer.diskStorage({
     },
     filename: (request, file, callback) => {
         // Se configura el nombre que tenga el archivo
-        callback(null, new Date().getMilliseconds + file.originalname);
+        callback(null, new Date().getMilliseconds() + file.originalname);
     },
 });
 
