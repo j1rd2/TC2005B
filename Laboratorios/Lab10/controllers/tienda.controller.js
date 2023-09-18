@@ -6,6 +6,7 @@ exports.get_vender = (request, response, next) => {
     response.render ('vender.ejs', {
         username: request.session.username || '',
         isLoggedIn: request.session.isLoggedIn || false,
+        privilegios: request.session.privilegios || [],
     });
 };
 
