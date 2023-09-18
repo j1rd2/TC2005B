@@ -13,10 +13,13 @@
                         <img class="justify-items-start w-20 h-20" src="logo.png"> 
                         <h1 class="font-mono text-center text-2xl text-stone-50">LOVE BIKES</h1>
                         <ul class="flex space-x-4">
-                            <li><a href="#" class="text-white">Home</a></li>
-                            <li><a href="#" class="text-white">About</a></li>
-                            <li><a href="#" class="text-white">Services</a></li>
-                            <li><a href="#" class="text-white">Contact</a></li>
+                            <li><a href="#" class="text-white">Noticias</a></li>
+                            <% for (let permiso of privilegios) { %>
+                                <% if (permiso.nombre == 'vender') %>
+                            <li><a href="/tienda/vender" class="text-white">Vender</a></li>
+                            <% } %>
+                            <li><a href="#" class="text-white">Taller</a></li>
+                            <li><a href="#" class="text-white">¿Quienes somos?</a></li>
                         </ul>
                         <% } %>
                     </div>
@@ -41,9 +44,10 @@
             <main>
                 <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
                 <div class="grid grid-cols-4 justify-items-center gap-4"> 
-            <% if (productos.length > 0) { %>
-                <% for (let producto of productos) { %>
                     <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <div>
+                            <img class="w-full" src="/uploads/<%= producto.imagen %>">
+                        </div>
                         <div class="px-6 py-4"><%= producto.marca %>
                             <p><a href="/productos/<%= producto.id %>"><%=producto.nombre%> </a></p>
                         </div>
@@ -55,14 +59,10 @@
                         <div class="px-6 py-4"><%= producto.anio %></div>
                         <br>
                         <div class="px-6 py-4">
-                            <%= producto.descripcion %>
                         </div>
                         <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto">Comprar</button>
                     </div>
-                 <% } %>
-             <% } else { %>
                     <h1> No hay productos registrados </h1>
-             <% } %>
                 </div>
             </main>
 Tiempo desde el ultimo acceso: <%= tiempo_transcurrido %> segundos.

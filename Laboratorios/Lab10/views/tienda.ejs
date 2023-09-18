@@ -47,6 +47,9 @@
             <% if (productos.length > 0) { %>
                 <% for (let producto of productos) { %>
                     <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                        <div>
+                            <img class="w-full" src="/uploads/<%= producto.imagen %>">
+                        </div>
                         <div class="px-6 py-4"><%= producto.marca %>
                             <p><a href="/productos/<%= producto.id %>"><%=producto.nombre%> </a></p>
                         </div>

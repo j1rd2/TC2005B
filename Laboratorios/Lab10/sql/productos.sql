@@ -38,6 +38,7 @@ CREATE TABLE `productos` (
   `modelo` varchar(300) NOT NULL,
   `anio` int(4) NOT NULL,
   `descripcion` varchar(1000) NOT NULL
+  `imagen` varchar(800) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

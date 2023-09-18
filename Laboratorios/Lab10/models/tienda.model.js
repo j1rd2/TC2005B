@@ -16,8 +16,8 @@ module.exports = class Productos {
 
     save() {
         return db.execute(
-            'INSERT INTO productos(marca, modelo, anio, descripcion) VALUES (? ,?, ?, ?)',
-            [this.marca, this.modelo, this.anio, this.descripcion]);
+            'INSERT INTO productos(marca, modelo, anio, descripcion, imagen) VALUES (? ,?, ?, ?, ?)',
+            [this.marca, this.modelo, this.anio, this.descripcion, this.imagen]);
     }
 
     // Metodo para devolver los objetos del objeto

@@ -11,14 +11,15 @@ exports.get_vender = (request, response, next) => {
 };
 
 exports.post_vender = (request, response, next) => {
-    console.log(request.body);            
+    console.log(request.body);
+    console.log(request.file);            
 
     const producto = new Producto ({
         marca: request.body.marca,
         modelo: request.body.modelo,
         anio: request.body.anio,
         descripcion: request.body.descripcion,
-        imagen: request.body.imagen,
+        imagen: request.file.filename,
     });
 
     producto.save()

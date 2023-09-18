@@ -1,6 +1,7 @@
 {
-  "marca": "Specialized",
-  "modelo": "Epic",
+  "marca": "Trek",
+  "modelo": "Marlin",
   "anio": "2023",
-  "descripcion": "La mejor"
+  "descripcion": "De las mas vendidas",
+  "imagen": "function getMilliseconds() { [native code] }marlin.png"
 }
