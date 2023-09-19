@@ -83,10 +83,37 @@ AND EXISTS (SELECT Denominacion
 
 < > Descripción de los materiales que nunca han sido entregados al proyecto 'CIT Yucatán'.
 
+SELECT descripcion
+FROM Materiales 
+WHERE descripcion NOT IN (SELECT descripcion
+                          FROM Materiales M, Entregan E, Proyectos P
+                          WHERE E.clave = M.clave AND P.numero = E.numero
+                          AND denominacion = 'CIT Yucatán')
 
 
 < > Razón social y promedio de cantidad entregada de los proveedores cuyo promedio de cantidad entregada es mayor
 al promedio de la cantidad entregada por el proveedor con el RFC 'VAGO780901'.
 
+SELECT RazonSocial, AVG(cantidad) 'Promedio'
+FROM proveedores P, Entregan E 
+WHERE P.RFC = E.RFC
+GROUP BY RazonSocial
+HAVING AVG(cantidad) > (SELECT AVG(cantidad)
+                        FROM Proveedores P, Entregan E
+                        WHERE P.RFC = E.RFC
+                        AND P.RazonSocial = 'Comex')
+
 < > RFC, razón social de los proveedores que participaron en el proyecto 'Infonavit Durango' y cuyas cantidades totales
 entregadas en el 2000 fueron mayores a las cantidades totales entregadas en el 2001.
+
+SELECT RFC, RazonSocial, SUM(Cantidad)
+FROM Proveedores PR, Proyectos P, Entregan E 
+WHERE PR.RFC = E.RFC AND P.Numero = E.Numero
+AND P.denominacion = 'Infonavit Durango'
+AND fecha BETWEEN = '2000/01/01' AND '2000/12/31
+GROUP BY PR.RFC, PR.RazonSocial
+HAVING SUM(E.CANTIDAD) > (SELECT RFC, RazonSocial, SUM(Cantidad)
+                          FROM Proveedores PR, Proyectos P, Entregan E 
+                          WHERE PR.RFC = E.RFC AND P.Numero = E.Numero
+                          AND denominacion = 'Infonavit Durango'
+                          AND fecha BETWEEN = '2001/01/01 AND 2001/12/31')
