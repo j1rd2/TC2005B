@@ -91,4 +91,5 @@ Laboratorio 22:
 > Se añadio la forma para subir archivos
 > Se instalo y configuro el paquete multer con "npm install --save multer" para manejar arcivos con node
 > Se creo la carpeta uploads (/public/uploads)
+> Se agrego imagen en tarjeta de producto. Se arreglo el objeto producto. Se configuro el modelo tienda. Se agrego imagen a la BD.
 
