@@ -12,6 +12,7 @@ const canVerTienda = require('../util/can-ver-tienda');
 router.get('/tienda/vender',isAuth, canVender, tiendaController.get_vender);
 router.post('/tienda/vender',isAuth, canVender, tiendaController.post_vender);
 router.get('/tienda',isAuth, canVerTienda, tiendaController.get_tienda);
+router.post('/tienda/delete', tiendaController.post_delete);
 router.get('/tienda/:id',isAuth, canVerTienda, tiendaController.get_tienda);
 router.get('/:id',isAuth, canVerTienda, tiendaController.get_tienda);
 

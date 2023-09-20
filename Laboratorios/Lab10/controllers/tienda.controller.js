@@ -67,3 +67,7 @@ exports.get_tienda = (request, response, next) => {
             response.redirect('/users/login');
         });
 }
+
+exports.post_delete = (request, response, next) => {
+    response.status(200).json({message: "Respuesta asincrona"});
+}
