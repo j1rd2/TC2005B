@@ -71,7 +71,7 @@ exports.get_tienda = (request, response, next) => {
 exports.post_delete = (request, response, next) => {
     console.log(request.body);
     Producto.delete(request.body.id).then(() => {
-        Producto.fetchAll().then(([productos, fieldData]) => {
+        Producto.fetchAll().then(([productos, fielData]) => {
             response.status(200).json({productos: productos});
         }).catch((error) => {
             console.log(error);

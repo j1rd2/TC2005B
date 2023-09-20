@@ -98,3 +98,4 @@ Laboratorio 24:
 > Extraer json de la respuesta
 > Enviar datos por POST en AJAX
 > Eliminar productos desde el servidor con AJAX
+> AJAX Completo

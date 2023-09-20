@@ -43,6 +43,8 @@
             </header>
             <main>
                 <h1 class="font-mono text-center text-4xl text-black">Tienda</h1>
+                <input id="_csrf" type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                <div id="productos">
                 <div class="grid grid-cols-4 justify-items-center gap-4"> 
             <% if (productos.length > 0) { %>
                 <% for (let producto of productos) { %>
@@ -64,14 +66,17 @@
                             <%= producto.descripcion %>
                         </div>
                         <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto">Comprar</button>
+                        <button class="bg-sky-900 hover:bg-blue-700 text-stone-50 py-2 px-4 rounded cursor-pointer mx-auto" onclick="accion_asincrona('<%= producto.id %>')">Eliminar</button>
                     </div>
                  <% } %>
              <% } else { %>
                     <h1> No hay productos registrados </h1>
              <% } %>
                 </div>
+                </div>
             </main>
 Tiempo desde el ultimo acceso: <%= tiempo_transcurrido %> segundos.
+            <script src="/js/ajax_delete.js"></script>
             <footer>
             </footer>
         </body>
