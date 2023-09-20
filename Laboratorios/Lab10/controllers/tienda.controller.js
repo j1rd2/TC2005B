@@ -69,5 +69,6 @@ exports.get_tienda = (request, response, next) => {
 }
 
 exports.post_delete = (request, response, next) => {
+    console.log(request.body);
     response.status(200).json({message: "Respuesta asincrona"});
 }

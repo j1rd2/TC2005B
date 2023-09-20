@@ -5,14 +5,16 @@ const accion_asincrona = (id) => {
 
     const csrf = document.getElementById('_csrf').value;
 
+    console.log(id);
+
     //Funcion que manda la peticion asincrona
     fetch('/tienda/delete', {
         method: 'POST',
         headers: {
-            //'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
             'csrf-token': csrf
-        }
-        //body: JSON.string(data)
+        },
+        body: JSON.stringify({id: id})
     }).then(result => {
         console.log(result);
         return result.json(); // Regresa una promesa

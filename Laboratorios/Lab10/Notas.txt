@@ -96,3 +96,4 @@ Laboratorio 22:
 Laboratorio 24:
 > Comunicacion con POST asincrono
 > Extraer json de la respuesta
+> Enviar datos por POST en AJAX
