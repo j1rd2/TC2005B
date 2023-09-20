@@ -1,8 +1,6 @@
 const accion_asincrona = (id) => {
-    //const mensaje = document.getElementById('mensaje').value;
     
     //Token de proteccion csrf
-
     const csrf = document.getElementById('_csrf').value;
 
     console.log(id);

@@ -70,5 +70,15 @@ exports.get_tienda = (request, response, next) => {
 
 exports.post_delete = (request, response, next) => {
     console.log(request.body);
-    response.status(200).json({message: "Respuesta asincrona"});
+    Producto.delete(request.body.id).then(() => {
+        Producto.fetchAll().then(([productos, fieldData]) => {
+            response.status(200).json({productos: productos});
+        }).catch((error) => {
+            console.log(error);
+            response.status(200).json({mensaje: "No se pudo eliminar"});
+        });
+    }).catch((error) => {
+        console.log(error);
+        response.status(200).json({message: "No se pudo eliminar"});
+    })
 }

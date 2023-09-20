@@ -97,3 +97,4 @@ Laboratorio 24:
 > Comunicacion con POST asincrono
 > Extraer json de la respuesta
 > Enviar datos por POST en AJAX
+> Eliminar productos desde el servidor con AJAX

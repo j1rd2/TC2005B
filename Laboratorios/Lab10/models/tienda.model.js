@@ -33,4 +33,9 @@ module.exports = class Productos {
             return this.fetchAll();
         }
     }
+
+    static delete(id) {
+        return db.execute('DELETE FROM productos WHERE id = ?',
+        [id]);
+    }
 }
