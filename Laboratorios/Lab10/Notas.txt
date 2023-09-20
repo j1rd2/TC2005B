@@ -95,3 +95,4 @@ Laboratorio 22:
 
 Laboratorio 24:
 > Comunicacion con POST asincrono
+> Extraer json de la respuesta
