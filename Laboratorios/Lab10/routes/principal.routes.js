@@ -14,4 +14,6 @@ router.get('/noticias/vuelta', principalController.get_vuelta);
 
 router.get('/noticias/giro', principalController.get_giro);
 
+router.get('/pokemon/:name', principalController.getPokemon);
+
 module.exports = router;
